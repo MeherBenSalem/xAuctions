@@ -36,10 +36,7 @@ public class xAuctionsExpansion extends PlaceholderExpansion {
     @Override
     public String onRequest(OfflinePlayer player, @NotNull String params) {
         if (params.equalsIgnoreCase("active_count")) {
-            // Need a method in AuctionManager/Storage to get count efficiently
-            // For now, load active and count (not efficient but works for MVP)
-            // Or better, just return "..." if async loading is needed, or cache it.
-            return "Loading..."; // PlaceholderAPI requires sync usually
+            return String.valueOf(plugin.getAuctionService().getActiveCount());
         }
 
         if (player == null)

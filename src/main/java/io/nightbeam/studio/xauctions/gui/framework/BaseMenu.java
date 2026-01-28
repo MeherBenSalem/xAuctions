@@ -21,6 +21,10 @@ public abstract class BaseMenu extends AbstractMenu {
         super(plugin, title, size);
     }
 
+    public void open(Player player) {
+        plugin.getGuiManager().openMenu(player, this);
+    }
+
     @Override
     public void handleClick(InventoryClickEvent event) {
         // Handle action if item exists

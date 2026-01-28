@@ -17,6 +17,8 @@ import io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider;
 import io.nightbeam.studio.xauctions.config.PluginConfig;
 import io.nightbeam.studio.xauctions.api.service.AuctionService;
 import io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl;
+import io.nightbeam.studio.xauctions.core.managers.TaxManager;
+import io.nightbeam.studio.xauctions.core.managers.ListingLimitManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -45,18 +47,28 @@ public class XAuctionsPlugin extends JavaPlugin {
     private DiscordWebhook discordWebhook;
     private MessageManager messageManager;
     private AuctionService auctionService;
+    private io.nightbeam.studio.xauctions.core.managers.TaxManager taxManager;
+    private io.nightbeam.studio.xauctions.core.managers.ListingLimitManager listingLimitManager;
+    private io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager itemBlacklistManager;
+    private io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager playerBlacklistManager;
 
     // Configuration
     private PluginConfig pluginConfig;
+
+    // ... [skipping to getters]
 
     @Override
     public void onEnable() {
         instance = this;
         long startTime = System.currentTimeMillis();
 
-        getLogger().info("═══════════════════════════════════════════");
-        getLogger().info("       xAuctions by Nightbeam Studio");
-        getLogger().info("═══════════════════════════════════════════");
+        getLogger().info("§b__  __    _             _   _                 ");
+        getLogger().info("§b\\ \\/ /   / \\  _   _  ___| |_(_) ___  _ __  ___ ");
+        getLogger().info("§b \\  /   / _ \\| | | |/ __| __| |/ _ \\| '_ \\/ __|");
+        getLogger().info("§b /  \\  / ___ \\ |_| | (__| |_| | (_) | | | \\__ \\");
+        getLogger().info("§b/_/\\_\\/_/   \\_\\__,_|\\___|\\__|_|\\___/|_| |_|___/");
+        getLogger().info("§fPremium Auction House §7v" + getDescription().getVersion());
+        getLogger().info("§7Running on " + getServer().getVersion());
 
         try {
             // Load configuration
@@ -145,6 +157,25 @@ public class XAuctionsPlugin extends JavaPlugin {
         // 7. Input Listener (no dependencies)
         inputListener = new InputListener(this);
         debug("InputListener initialized.");
+
+        // 8. Tax Manager
+        taxManager = new TaxManager(this);
+        taxManager.init();
+        debug("TaxManager initialized.");
+
+        // 9. Listing Limit Manager
+        listingLimitManager = new ListingLimitManager(this);
+        debug("ListingLimitManager initialized.");
+
+        // 10. Item Blacklist Manager
+        itemBlacklistManager = new io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager(this);
+        itemBlacklistManager.init();
+        debug("ItemBlacklistManager initialized.");
+
+        // 11. Player Blacklist Manager
+        playerBlacklistManager = new io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager(this);
+        playerBlacklistManager.init();
+        debug("PlayerBlacklistManager initialized.");
     }
 
     /**
@@ -305,5 +336,21 @@ public class XAuctionsPlugin extends JavaPlugin {
 
     public AuctionService getAuctionService() {
         return auctionService;
+    }
+
+    public io.nightbeam.studio.xauctions.core.managers.TaxManager getTaxManager() {
+        return taxManager;
+    }
+
+    public io.nightbeam.studio.xauctions.core.managers.ListingLimitManager getListingLimitManager() {
+        return listingLimitManager;
+    }
+
+    public io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager getItemBlacklistManager() {
+        return itemBlacklistManager;
+    }
+
+    public io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager getPlayerBlacklistManager() {
+        return playerBlacklistManager;
     }
 }

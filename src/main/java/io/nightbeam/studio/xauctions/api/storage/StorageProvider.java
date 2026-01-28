@@ -41,4 +41,11 @@ public interface StorageProvider {
      * Invalidate local cache for an auction (used by multi-server sync).
      */
     void invalidateCache(UUID auctionId);
+
+    /**
+     * Atomic buy operation.
+     * 
+     * @return true if successful, false if already sold/unavailable.
+     */
+    CompletableFuture<Boolean> attemptBuy(UUID auctionId, UUID buyerUuid);
 }

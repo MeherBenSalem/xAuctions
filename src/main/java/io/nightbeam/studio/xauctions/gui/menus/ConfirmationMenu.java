@@ -28,6 +28,11 @@ public class ConfirmationMenu extends BaseMenu {
 
     @Override
     public void onOpen(Player player) {
+        update();
+    }
+
+    @Override
+    public void update() {
         // Confirmation Info
         setItem(13, ItemBuilder.from(Material.PAPER)
                 .name("§e§lInfo")
@@ -39,9 +44,10 @@ public class ConfirmationMenu extends BaseMenu {
                 .name("§a§lCONFIRM")
                 .lore("§7Click to confirm.")
                 .build(), event -> {
-                    player.closeInventory();
+                    Player p = (Player) event.getWhoClicked();
+                    p.closeInventory();
                     if (onConfirm != null)
-                        onConfirm.accept(player);
+                        onConfirm.accept(p);
                 }));
 
         // Cancel Button
@@ -49,9 +55,10 @@ public class ConfirmationMenu extends BaseMenu {
                 .name("§c§lCANCEL")
                 .lore("§7Click to cancel.")
                 .build(), event -> {
-                    player.closeInventory();
+                    Player p = (Player) event.getWhoClicked();
+                    p.closeInventory();
                     if (onCancel != null)
-                        onCancel.accept(player);
+                        onCancel.accept(p);
                 }));
 
         fillBorders(ItemBuilder.from(Material.GRAY_STAINED_GLASS_PANE).name(" ").build());

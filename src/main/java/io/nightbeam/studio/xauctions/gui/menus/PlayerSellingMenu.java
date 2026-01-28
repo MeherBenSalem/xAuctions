@@ -19,21 +19,28 @@ import java.util.UUID;
 public class PlayerSellingMenu extends AbstractMenu {
 
     private final Map<Integer, Auction> auctionMap = new HashMap<>();
+    private final Player targetPlayer;
+    private final Player viewer;
 
     public PlayerSellingMenu(XAuctionsPlugin plugin, Player targetPlayer, @Nullable Player viewer) {
         super(plugin, "My Auctions", 54);
+        this.targetPlayer = targetPlayer;
+        this.viewer = viewer != null ? viewer : targetPlayer;
     }
 
     @Override
     public void onOpen(Player player) {
+        update();
+    }
+
+    @Override
+    public void update() {
         // Load player's auctions
-        plugin.getStorageProvider().loadPlayerAuctions(player.getUniqueId()).thenAccept(auctions -> {
-            plugin.getServer().getScheduler().runTask(plugin, () -> {
+        plugin.getStorageProvider().loadPlayerAuctions(targetPlayer.getUniqueId()).thenAccept(auctions -> {
+            io.nightbeam.studio.xauctions.utils.SchedulerUtils.run(plugin, () -> {
                 int slot = 0;
                 auctionMap.clear();
-
-                // Sort by status: Ready to Collect first, then Active, then History
-                // Or just iterate
+                inventory.clear();
 
                 for (Auction auction : auctions) {
                     if (slot >= 45)
@@ -47,7 +54,6 @@ public class PlayerSellingMenu extends AbstractMenu {
                     lore.add("§8§m----------------");
 
                     if (auction.isCollected()) {
-                        // History
                         lore.add("§7Status: §8Collected / Archived");
                         if (auction.isSold()) {
                             lore.add("§7Sold for: §6"
@@ -56,19 +62,16 @@ public class PlayerSellingMenu extends AbstractMenu {
                             lore.add("§7Result: §cExpired/Cancelled");
                         }
                     } else if (auction.isSold()) {
-                        // Sold, not collected
                         lore.add("§7Status: §aSOLD!");
                         lore.add("§7Sold for: §6"
                                 + plugin.getEconomyManager().getDefaultProvider().format(auction.getPrice()));
                         lore.add(" ");
                         lore.add("§eClick to Collect Money");
                     } else if (auction.isExpired() || auction.isDeleted()) {
-                        // Expired, not collected
                         lore.add("§7Status: §cEXPIRED");
                         lore.add(" ");
                         lore.add("§eClick to Retreive Item");
                     } else {
-                        // Active
                         lore.add("§7Status: §bActive");
                         lore.add("§7Price: §6"
                                 + plugin.getEconomyManager().getDefaultProvider().format(auction.getPrice()));
@@ -122,6 +125,15 @@ public class PlayerSellingMenu extends AbstractMenu {
             Auction auction = auctionMap.get(slot);
             Player player = (Player) event.getWhoClicked();
 
+            // Safety check: only owner can manage? Or admins too?
+            // viewer field implies we might be viewing someone else's.
+            boolean canManage = player.getUniqueId().equals(targetPlayer.getUniqueId())
+                    || player.hasPermission("xauctions.admin");
+
+            if (!canManage) {
+                return;
+            }
+
             if (auction.isCollected()) {
                 player.sendMessage("§7This item is already in your history.");
                 return;
@@ -131,13 +143,11 @@ public class PlayerSellingMenu extends AbstractMenu {
                 // Collect
                 plugin.getAuctionManager().collectAuction(player, auction);
                 // Refresh
-                player.closeInventory();
-                plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin, player, player));
+                update();
             } else {
                 // Active -> Cancel
                 plugin.getAuctionManager().cancelAuction(player, auction);
-                player.closeInventory();
-                plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin, player, player));
+                update();
             }
         }
     }

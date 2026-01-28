@@ -17,6 +17,11 @@ public class CategoryMenu extends BaseMenu {
 
     @Override
     public void onOpen(Player player) {
+        update();
+    }
+
+    @Override
+    public void update() {
         fillBorders(ItemBuilder.from(Material.GRAY_STAINED_GLASS_PANE).name(" ").build());
 
         // Helper to add filter button
@@ -27,7 +32,7 @@ public class CategoryMenu extends BaseMenu {
 
         // Back
         setItem(22, new MenuItem(ItemBuilder.from(Material.ARROW).name("§cBack").build(), event -> {
-            plugin.getGuiManager().openMenu(player, new MainMenu(plugin));
+            plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new MainMenu(plugin));
         }));
     }
 

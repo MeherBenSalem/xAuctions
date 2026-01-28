@@ -29,6 +29,8 @@ public abstract class AbstractMenu implements InventoryHolder {
 
     public abstract void handleClick(InventoryClickEvent event);
 
+    public abstract void update();
+
     @Override
     public @NotNull Inventory getInventory() {
         return inventory;

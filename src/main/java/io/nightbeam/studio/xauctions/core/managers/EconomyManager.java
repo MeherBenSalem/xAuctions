@@ -5,6 +5,9 @@ import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.economy.impl.VaultProvider;
 import io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider;
 
+import io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider;
+import io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -41,6 +44,11 @@ public class EconomyManager implements EconomyService {
                 plugin.getLogger().log(Level.WARNING, "Failed to hook PlayerPoints", e);
             }
         }
+
+        // Register Internal Providers
+        registerProvider(new LevelEconomyProvider());
+        // Example: Register Emerald as currency. In real config, this would be dynamic.
+        registerProvider(new ItemEconomyProvider(org.bukkit.Material.EMERALD, "Emeralds"));
     }
 
     public void registerProvider(EconomyProvider provider) {

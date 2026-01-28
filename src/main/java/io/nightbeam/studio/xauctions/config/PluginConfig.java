@@ -42,7 +42,9 @@ public class PluginConfig {
                 config.getBoolean("auction-settings.allow-creative", false),
                 config.getBoolean("auction-settings.allow-damaged", true),
                 config.getBoolean("auction-settings.broadcast-creation", true),
-                config.getBoolean("auction-settings.broadcast-sale", true));
+                config.getBoolean("auction-settings.broadcast-sale", true),
+                config.getBoolean("auction-settings.auto-claim-online", true),
+                config.getBoolean("auction-settings.auto-claim-on-join", true));
 
         // Storage
         this.storageType = config.getString("storage.type", "json");

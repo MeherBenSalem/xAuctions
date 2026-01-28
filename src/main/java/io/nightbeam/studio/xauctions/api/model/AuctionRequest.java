@@ -11,8 +11,10 @@ public record AuctionRequest(
         ItemStack item,
         double price,
         long durationSeconds,
-        String currency) {
+        String currency,
+        io.nightbeam.studio.xauctions.api.model.Auction.AuctionType type) {
     public AuctionRequest(Player seller, ItemStack item, double price, long durationSeconds) {
-        this(seller, item, price, durationSeconds, "vault");
+        this(seller, item, price, durationSeconds, "vault",
+                io.nightbeam.studio.xauctions.api.model.Auction.AuctionType.BIN);
     }
 }

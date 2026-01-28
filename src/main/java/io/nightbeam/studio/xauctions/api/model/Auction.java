@@ -9,6 +9,7 @@ public class Auction {
     private UUID auctionId;
     private UUID sellerUuid;
     private String sellerName;
+    private UUID buyerUuid; // New
     private ItemStack itemStack;
     private double price;
     private long requestTime;
@@ -20,12 +21,14 @@ public class Auction {
     private boolean sold;
     private boolean collected;
 
-    public Auction(UUID auctionId, UUID sellerUuid, String sellerName, ItemStack itemStack, double price,
+    public Auction(UUID auctionId, UUID sellerUuid, String sellerName, UUID buyerUuid, ItemStack itemStack,
+            double price,
             long requestTime, long startTime, long expireTime, AuctionType type, String currency, boolean deleted,
             boolean sold, boolean collected) {
         this.auctionId = auctionId;
         this.sellerUuid = sellerUuid;
         this.sellerName = sellerName;
+        this.buyerUuid = buyerUuid;
         this.itemStack = itemStack;
         this.price = price;
         this.requestTime = requestTime;
@@ -54,12 +57,24 @@ public class Auction {
         return sellerName;
     }
 
+    public UUID getBuyerUuid() {
+        return buyerUuid;
+    }
+
+    public void setBuyerUuid(UUID buyerUuid) {
+        this.buyerUuid = buyerUuid;
+    }
+
     public ItemStack getItemStack() {
         return itemStack;
     }
 
     public double getPrice() {
         return price;
+    }
+
+    public String getCurrency() {
+        return currency;
     }
 
     public long getStartTime() {
@@ -102,6 +117,7 @@ public class Auction {
         private UUID auctionId;
         private UUID sellerUuid;
         private String sellerName;
+        private UUID buyerUuid;
         private ItemStack itemStack;
         private double price;
         private long requestTime;
@@ -125,6 +141,11 @@ public class Auction {
 
         public AuctionBuilder sellerName(String sellerName) {
             this.sellerName = sellerName;
+            return this;
+        }
+
+        public AuctionBuilder buyerUuid(UUID buyerUuid) {
+            this.buyerUuid = buyerUuid;
             return this;
         }
 
@@ -174,7 +195,8 @@ public class Auction {
         }
 
         public Auction build() {
-            return new Auction(auctionId, sellerUuid, sellerName, itemStack, price, requestTime, startTime, expireTime,
+            return new Auction(auctionId, sellerUuid, sellerName, buyerUuid, itemStack, price, requestTime, startTime,
+                    expireTime,
                     type, currency, deleted, sold, collected);
         }
     }

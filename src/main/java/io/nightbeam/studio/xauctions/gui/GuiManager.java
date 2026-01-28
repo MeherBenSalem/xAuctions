@@ -17,10 +17,17 @@ public class GuiManager implements Listener {
 
     private final XAuctionsPlugin plugin;
     private final Map<UUID, AbstractMenu> openMenus = new HashMap<>();
+    private final io.nightbeam.studio.xauctions.config.menu.LayoutLoader layoutLoader;
 
     public GuiManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
+        this.layoutLoader = new io.nightbeam.studio.xauctions.config.menu.LayoutLoader(plugin);
+        this.layoutLoader.loadLayouts();
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
+    }
+
+    public io.nightbeam.studio.xauctions.config.menu.LayoutLoader getLayoutLoader() {
+        return layoutLoader;
     }
 
     public void openMenu(Player player, AbstractMenu menu) {
@@ -56,6 +63,13 @@ public class GuiManager implements Listener {
             if (menu != null) {
                 menu.onClose(player);
             }
+        }
+    }
+
+    public void refreshMenu(Player player) {
+        AbstractMenu menu = openMenus.get(player.getUniqueId());
+        if (menu != null) {
+            menu.update();
         }
     }
 }

@@ -45,5 +45,17 @@ public interface AuctionService {
      * @param auction The auction to collect.
      * @return A future containing the result.
      */
+    /**
+     * Collects an auction (either money from sale or item from expiration).
+     *
+     * @param player  The player collecting the auction.
+     * @param auction The auction to collect.
+     * @return A future containing the result.
+     */
     CompletableFuture<Result<Void>> collectAuction(Player player, Auction auction);
+
+    /**
+     * Returns the cached count of active auctions.
+     */
+    int getActiveCount();
 }

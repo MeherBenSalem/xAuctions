@@ -15,6 +15,11 @@ public class MainMenu extends BaseMenu {
 
     @Override
     public void onOpen(Player player) {
+        update();
+    }
+
+    @Override
+    public void update() {
         // Borders
         fillBorders(ItemBuilder.from(Material.BLACK_STAINED_GLASS_PANE).name(" ").build());
 
@@ -23,7 +28,7 @@ public class MainMenu extends BaseMenu {
                 .name("§eBrowse Auctions")
                 .lore("§7Click to view all active auctions")
                 .build(), event -> {
-                    plugin.getGuiManager().openMenu(player, new AuctionsMenu(plugin));
+                    plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new AuctionsMenu(plugin));
                 }));
 
         // Search Button (22)
@@ -32,9 +37,9 @@ public class MainMenu extends BaseMenu {
                 .lore("§aLeft-Click §7to search items", "§aRight-Click §7to clear search")
                 .build(), event -> {
                     if (event.isRightClick()) {
-                        plugin.getGuiManager().openMenu(player, new AuctionsMenu(plugin, null));
+                        plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new AuctionsMenu(plugin, null));
                     } else {
-                        plugin.getInputListener().awaitSearch(player);
+                        plugin.getInputListener().awaitSearch((Player) event.getWhoClicked());
                     }
                 }));
 
@@ -43,17 +48,16 @@ public class MainMenu extends BaseMenu {
                 .name("§bMy Auctions")
                 .lore("§7Manage your listings", "§7Collect earnings/items")
                 .build(), event -> {
-                    plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin, player, player));
+                    Player p = (Player) event.getWhoClicked();
+                    plugin.getGuiManager().openMenu(p, new PlayerSellingMenu(plugin, p, p));
                 }));
 
-        // Categories (31) - Keep for now, but link properly or remove if user prefers
-        // direct.
-        // User's image didn't show main menu, but let's keep it consistent.
+        // Categories (31)
         setItem(31, new MenuItem(ItemBuilder.from(Material.CHEST)
                 .name("§6Categories")
                 .lore("§7Browse by category")
                 .build(), event -> {
-                    plugin.getGuiManager().openMenu(player, new CategoryMenu(plugin));
+                    plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new CategoryMenu(plugin));
                 }));
     }
 

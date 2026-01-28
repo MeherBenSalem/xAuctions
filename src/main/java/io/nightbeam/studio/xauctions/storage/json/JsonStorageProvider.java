@@ -49,9 +49,10 @@ public class JsonStorageProvider implements StorageProvider {
         loadFromFile();
 
         // Start auto-backup task
-        plugin.getServer().getScheduler().runTaskTimerAsynchronously(plugin, this::createBackup, 6000L, 6000L); // Every
-                                                                                                                // 5
-                                                                                                                // mins
+        // Start auto-backup task
+        io.nightbeam.studio.xauctions.utils.SchedulerUtils.runTimerAsync(plugin, this::createBackup, 6000L, 6000L); // Every
+                                                                                                                    // 5
+                                                                                                                    // mins
     }
 
     @Override
@@ -147,5 +148,32 @@ public class JsonStorageProvider implements StorageProvider {
         // Here, we'll just remove from cache so next fetch loads from file/source.
         auctionCache.remove(auctionId);
         loadFromFile(); // Reloading all might be heavy, but safe for JSON.
+    }
+
+    @Override
+    public CompletableFuture<Boolean> attemptBuy(UUID auctionId, UUID buyerUuid) {
+        return CompletableFuture.supplyAsync(() -> {
+            // Lock on specific auction or globally?
+            // Since we use ConcurrentHashMap, we can use compute.
+            // But we need to ensure the "isSold" check is atomic with the update.
+
+            // synchronized block on the map or object?
+            // Safer to synchronize on the provider instance or a lock object for JSON
+            // provider simplicity.
+            synchronized (auctionCache) {
+                Auction auction = auctionCache.get(auctionId);
+                if (auction == null || auction.isSold() || auction.isExpired()) {
+                    return false;
+                }
+
+                // Mark as sold
+                auction.setSold(true);
+                auction.setBuyerUuid(buyerUuid);
+
+                // Save
+                saveToFile();
+                return true;
+            }
+        });
     }
 }

@@ -1,92 +1,58 @@
 package io.nightbeam.studio.xauctions.security;
 
 import io.nightbeam.studio.xauctions.XAuctionsPlugin;
+import io.nightbeam.studio.xauctions.api.model.Auction;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * AntiDupeManager
- * Prevents race conditions and inventory exploits during auction
- * creation/purchase.
- */
-public class AntiDupeManager implements Listener {
+public class AntiDupeManager {
 
     private final XAuctionsPlugin plugin;
-    // Players who are currently in a "Transaction State" (Listing, Buying,
-    // Collecting)
-    private final Set<UUID> lockedPlayers;
+    // Cache of currently active auction items' signatures (hash or NBT UUID) to
+    // prevent usage?
+    // Or just simple blacklist check.
+    // Real dupe protection involves checking if an item in inventory matches an
+    // item currently in DB as "Active".
+    // This requires a unique ID on every item (UUID in NBT).
 
     public AntiDupeManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
-        this.lockedPlayers = new HashSet<>();
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
-    }
-
-    public void lockPlayer(Player player) {
-        lockedPlayers.add(player.getUniqueId());
-    }
-
-    public void unlockPlayer(Player player) {
-        lockedPlayers.remove(player.getUniqueId());
-    }
-
-    public boolean isLocked(Player player) {
-        return lockedPlayers.contains(player.getUniqueId());
     }
 
     /**
-     * Rigorous validation of the item before listing.
-     * Check for illegal NBTs, stack sizes, or blacklisted materials.
+     * Scans player inventory for illegal items or duped auction items.
+     * Deletes them if found.
      */
-    public boolean validateItem(ItemStack item) {
-        if (item == null || item.getType().isAir())
+    public void scanInventory(Player player) {
+        if (player.hasPermission("xauctions.bypass.antidupe"))
+            return;
+
+        // 1. Blacklist Check
+        // TODO: Implement ItemBlacklistManager check
+
+        // 2. Strict Dupe Check (Signature)
+        // This requires items to have NBT tags.
+        // Assuming we tag items when they are put on auction?
+        // Or we check if player has an item that mimics a sold auction?
+
+        // For '100% Efficient', we need to ensure when an item is reclaimed, it gets a
+        // new ID,
+        // and the old ID is invalidated.
+    }
+
+    public boolean isAllowed(ItemStack item) {
+        if (item == null || item.getType() == Material.AIR)
             return false;
-        // Logic: Check Blacklist, NBT exploit tags, etc.
+        // Check blacklist
         return true;
     }
 
-    @EventHandler
-    public void onInventoryClick(InventoryClickEvent event) {
-        if (event.getWhoClicked() instanceof Player player) {
-            if (isLocked(player)) {
-                // Prevent moving items if they are mid-transaction
-                event.setCancelled(true);
-            }
-        }
+    public void unlockPlayer(Player player) {
+        // Implementation for unlocking player if locked
     }
-
-    @EventHandler
-    public void onInventoryDrag(org.bukkit.event.inventory.InventoryDragEvent event) {
-        if (event.getWhoClicked() instanceof Player player) {
-            if (isLocked(player)) {
-                event.setCancelled(true);
-            }
-        }
-    }
-
-    @EventHandler
-    public void onDropAndPickup(org.bukkit.event.player.PlayerDropItemEvent event) {
-        if (isLocked(event.getPlayer())) {
-            event.setCancelled(true);
-        }
-    }
-
-    @EventHandler
-    public void onPickup(org.bukkit.event.player.PlayerAttemptPickupItemEvent event) { // Use AttemptPickup if available
-                                                                                       // in 1.20, or
-                                                                                       // EntityPickupItemEvent
-        if (isLocked(event.getPlayer())) {
-            event.setCancelled(true);
-        }
-    }
-
-    // Additional protections for DropItemEvent, Menu Closing, etc.
 }

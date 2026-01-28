@@ -6,11 +6,13 @@ package io.nightbeam.studio.xauctions.config;
 public record AuctionSettings(
         long defaultDurationSeconds,
         double listingFee,
-        int maxAuctionsPerPlayer,
+        int maxAuctions,
         double minPrice,
         double maxPrice,
         boolean allowCreative,
         boolean allowDamaged,
         boolean broadcastCreation,
-        boolean broadcastSale) {
+        boolean broadcastSale,
+        boolean autoClaimOnline,
+        boolean autoClaimOnJoin) {
 }
