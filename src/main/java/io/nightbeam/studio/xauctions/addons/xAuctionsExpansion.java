@@ -1,15 +1,15 @@
 package io.nightbeam.studio.xauctions.addons;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 
 public class xAuctionsExpansion extends PlaceholderExpansion {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
 
-    public xAuctionsExpansion(xAuctions plugin) {
+    public xAuctionsExpansion(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 

@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.redis;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -10,11 +10,11 @@ import java.util.concurrent.CompletableFuture;
 
 public class RedisManager {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private JedisPool jedisPool;
     private JedisPubSub pubSub;
 
-    public RedisManager(xAuctions plugin) {
+    public RedisManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 

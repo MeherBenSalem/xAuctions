@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.core.commands;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.gui.menus.MainMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class AuctionsCommand implements CommandExecutor {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
 
-    public AuctionsCommand(xAuctions plugin) {
+    public AuctionsCommand(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 

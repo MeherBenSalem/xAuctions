@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import io.nightbeam.studio.xauctions.api.model.Auction;
 import io.nightbeam.studio.xauctions.api.storage.StorageProvider;
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ import java.util.logging.Level;
 
 public class JsonStorageProvider implements StorageProvider {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private final Gson gson;
     private final File auctionsFile;
     private final File backupDir;
@@ -25,7 +25,7 @@ public class JsonStorageProvider implements StorageProvider {
     // In-memory cache for fast access, synced to file periodically or on change
     private final Map<UUID, Auction> auctionCache = new ConcurrentHashMap<>();
 
-    public JsonStorageProvider(xAuctions plugin) {
+    public JsonStorageProvider(XAuctionsPlugin plugin) {
         this.plugin = plugin;
         this.gson = new GsonBuilder()
                 .setPrettyPrinting()

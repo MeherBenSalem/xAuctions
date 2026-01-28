@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import io.nightbeam.studio.xauctions.api.model.Auction;
 import io.nightbeam.studio.xauctions.api.storage.StorageProvider;
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,10 +17,10 @@ import java.util.concurrent.CompletableFuture;
 
 public class SqlStorageProvider implements StorageProvider {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private HikariDataSource dataSource;
 
-    public SqlStorageProvider(xAuctions plugin) {
+    public SqlStorageProvider(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 

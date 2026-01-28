@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.core.listeners;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,10 +13,10 @@ import java.util.UUID;
 
 public class InputListener implements Listener {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private final Set<UUID> awaitingSearch = new HashSet<>();
 
-    public InputListener(xAuctions plugin) {
+    public InputListener(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 

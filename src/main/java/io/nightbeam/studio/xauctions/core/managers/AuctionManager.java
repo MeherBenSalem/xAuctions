@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.core.managers;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.api.model.Auction;
 import io.nightbeam.studio.xauctions.api.economy.EconomyProvider;
 import org.bukkit.Bukkit;
@@ -12,9 +12,9 @@ import java.util.concurrent.CompletableFuture;
 
 public class AuctionManager {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
 
-    public AuctionManager(xAuctions plugin) {
+    public AuctionManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -25,8 +25,8 @@ public class AuctionManager {
         // 1. Validation (Limits check TODO)
 
         // Fee Calculation
-        double feePercent = plugin.getConfig().getDouble("auctions.listing-fee-percent", 0.01);
-        double fee = price * feePercent;
+        double fee = plugin.getPluginConfig().getAuctionSettings().listingFee();
+        // double fee = price * feePercent; // TODO: Add percentage option in future
 
         EconomyProvider eco = plugin.getEconomyManager().getDefaultProvider();
         if (eco != null && fee > 0) {

@@ -1,11 +1,12 @@
 package io.nightbeam.studio.xauctions.gui.menus;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.api.model.Auction;
 import io.nightbeam.studio.xauctions.gui.AbstractMenu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.jetbrains.annotations.Nullable;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -19,7 +20,7 @@ public class PlayerSellingMenu extends AbstractMenu {
 
     private final Map<Integer, Auction> auctionMap = new HashMap<>();
 
-    public PlayerSellingMenu(xAuctions plugin) {
+    public PlayerSellingMenu(XAuctionsPlugin plugin, Player targetPlayer, @Nullable Player viewer) {
         super(plugin, "My Auctions", 54);
     }
 
@@ -131,12 +132,12 @@ public class PlayerSellingMenu extends AbstractMenu {
                 plugin.getAuctionManager().collectAuction(player, auction);
                 // Refresh
                 player.closeInventory();
-                plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin));
+                plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin, player, player));
             } else {
                 // Active -> Cancel
                 plugin.getAuctionManager().cancelAuction(player, auction);
                 player.closeInventory();
-                plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin));
+                plugin.getGuiManager().openMenu(player, new PlayerSellingMenu(plugin, player, player));
             }
         }
     }

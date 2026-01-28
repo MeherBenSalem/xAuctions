@@ -1,19 +1,94 @@
 name: xAuctions
 version: '${project.version}'
-main: io.nightbeam.studio.xauctions.xAuctions
-api-version: 1.20
-commands:
-  ah:
-    description: Open the Auction House
-    aliases: [auctions, xauctions]
-  sell:
-    description: Quick sell item
-    aliases: [qs, sell]
+main: io.nightbeam.studio.xauctions.XAuctionsPlugin
 api-version: '1.20'
 authors: [Nightbeam Studio]
 description: Premium Auction House Plugin
-softdepend: [Vault, PlaceholderAPI]
+website: https://nightbeam.io
+
+# Soft dependencies (optional integrations)
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - PlayerPoints
+  - TokenManager
+
+# Commands
+commands:
+  ah:
+    description: Open the Auction House
+    aliases: [auctions, xauctions, auctionhouse]
+    usage: /<command> [sell|search|help]
+  sell:
+    description: Quick sell item in hand
+    aliases: [qs, quicksell]
+    usage: /<command> <price> [duration]
+
+# Permissions
 permissions:
-  xauctions.admin:
-    description: Admin permission for xAuctions
+  xauctions.*:
+    description: All xAuctions permissions
     default: op
+    children:
+      xauctions.use: true
+      xauctions.sell: true
+      xauctions.buy: true
+      xauctions.admin: true
+
+  xauctions.use:
+    description: Access to auction house GUI
+    default: true
+
+  xauctions.sell:
+    description: Permission to list items for sale
+    default: true
+
+  xauctions.buy:
+    description: Permission to purchase items
+    default: true
+
+  xauctions.admin:
+    description: Admin commands and management
+    default: op
+    children:
+      xauctions.admin.reload: true
+      xauctions.admin.debug: true
+      xauctions.admin.remove: true
+
+  xauctions.admin.reload:
+    description: Reload plugin configuration
+    default: op
+
+  xauctions.admin.debug:
+    description: Access debug commands
+    default: op
+
+  xauctions.admin.remove:
+    description: Remove any player's auction
+    default: op
+
+  xauctions.fee.exempt:
+    description: Exempt from listing fees
+    default: op
+
+  # Limit permissions
+  xauctions.limit.vip:
+    description: VIP auction limit (15)
+    default: false
+
+  xauctions.limit.premium:
+    description: Premium auction limit (30)
+    default: false
+
+  xauctions.limit.unlimited:
+    description: Unlimited auctions
+    default: op
+
+  # Duration permissions
+  xauctions.duration.vip:
+    description: VIP duration limit (3 days)
+    default: false
+
+  xauctions.duration.premium:
+    description: Premium duration limit (7 days)
+    default: false

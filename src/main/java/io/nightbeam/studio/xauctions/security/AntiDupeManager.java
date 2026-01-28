@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.security;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,12 +19,12 @@ import java.util.UUID;
  */
 public class AntiDupeManager implements Listener {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     // Players who are currently in a "Transaction State" (Listing, Buying,
     // Collecting)
     private final Set<UUID> lockedPlayers;
 
-    public AntiDupeManager(xAuctions plugin) {
+    public AntiDupeManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
         this.lockedPlayers = new HashSet<>();
         plugin.getServer().getPluginManager().registerEvents(this, plugin);

@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.gui;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,10 +15,10 @@ import java.util.UUID;
 
 public class GuiManager implements Listener {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private final Map<UUID, AbstractMenu> openMenus = new HashMap<>();
 
-    public GuiManager(xAuctions plugin) {
+    public GuiManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }

@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.core.managers;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -10,11 +10,11 @@ import java.io.File;
 
 public class MessageManager {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private FileConfiguration messages;
     private File messagesFile;
 
-    public MessageManager(xAuctions plugin) {
+    public MessageManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
         init();
     }

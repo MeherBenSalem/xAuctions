@@ -1,7 +1,7 @@
 package io.nightbeam.studio.xauctions.core.managers;
 
 import io.nightbeam.studio.xauctions.api.economy.EconomyProvider;
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.economy.impl.VaultProvider;
 import io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider;
 
@@ -9,12 +9,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-public class EconomyManager {
+import io.nightbeam.studio.xauctions.api.service.EconomyService;
+import org.bukkit.OfflinePlayer;
 
-    private final xAuctions plugin;
+public class EconomyManager implements EconomyService {
+
+    private final XAuctionsPlugin plugin;
     private final Map<String, EconomyProvider> providers = new HashMap<>();
 
-    public EconomyManager(xAuctions plugin) {
+    public EconomyManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -49,9 +52,51 @@ public class EconomyManager {
     }
 
     public EconomyProvider getDefaultProvider() {
+        // Get configured provider from PluginConfig
+        String providerId = plugin.getPluginConfig().getEconomyProvider();
+        if (providers.containsKey(providerId)) {
+            return providers.get(providerId);
+        }
+
         // Return Vault if available, otherwise first available
         if (providers.containsKey("vault"))
             return providers.get("vault");
         return providers.values().stream().findFirst().orElse(null);
+    }
+
+    // ----------------------------------------------------------------
+    // EconomyService Implementation
+    // ----------------------------------------------------------------
+
+    @Override
+    public boolean withdraw(OfflinePlayer player, double amount) {
+        EconomyProvider provider = getDefaultProvider();
+        if (provider == null)
+            return false;
+        return provider.withdraw(player, amount);
+    }
+
+    @Override
+    public boolean deposit(OfflinePlayer player, double amount) {
+        EconomyProvider provider = getDefaultProvider();
+        if (provider == null)
+            return false;
+        return provider.deposit(player, amount);
+    }
+
+    @Override
+    public boolean has(OfflinePlayer player, double amount) {
+        EconomyProvider provider = getDefaultProvider();
+        if (provider == null)
+            return false;
+        return provider.has(player, amount);
+    }
+
+    @Override
+    public String format(double amount) {
+        EconomyProvider provider = getDefaultProvider();
+        if (provider == null)
+            return String.valueOf(amount);
+        return provider.format(amount);
     }
 }

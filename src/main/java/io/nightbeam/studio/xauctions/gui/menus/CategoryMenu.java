@@ -1,72 +1,48 @@
 package io.nightbeam.studio.xauctions.gui.menus;
 
-import io.nightbeam.studio.xauctions.xAuctions;
-import io.nightbeam.studio.xauctions.gui.AbstractMenu;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
+import io.nightbeam.studio.xauctions.gui.framework.AuctionFilter;
+import io.nightbeam.studio.xauctions.gui.framework.BaseMenu;
+import io.nightbeam.studio.xauctions.gui.framework.MenuItem;
+import io.nightbeam.studio.xauctions.utils.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
-public class CategoryMenu extends AbstractMenu {
+public class CategoryMenu extends BaseMenu {
 
-    public CategoryMenu(xAuctions plugin) {
+    public CategoryMenu(XAuctionsPlugin plugin) {
         super(plugin, "Categories", 27);
     }
 
     @Override
     public void onOpen(Player player) {
-        // Blocks
-        ItemStack blocks = new ItemStack(Material.GRASS_BLOCK);
-        ItemMeta blockMeta = blocks.getItemMeta();
-        blockMeta.setDisplayName("§aBlocks");
-        blocks.setItemMeta(blockMeta);
-        setItem(10, blocks);
+        fillBorders(ItemBuilder.from(Material.GRAY_STAINED_GLASS_PANE).name(" ").build());
 
-        // Weapons
-        ItemStack weapons = new ItemStack(Material.DIAMOND_SWORD);
-        ItemMeta weaponMeta = weapons.getItemMeta();
-        weaponMeta.setDisplayName("§cWeapons");
-        weapons.setItemMeta(weaponMeta);
-        setItem(12, weapons);
+        // Helper to add filter button
+        addFilterButton(10, AuctionFilter.BLOCKS);
+        addFilterButton(12, AuctionFilter.WEAPONS);
+        addFilterButton(14, AuctionFilter.CONSUMABLES);
+        addFilterButton(16, AuctionFilter.MISC);
 
-        // Tools
-        ItemStack tools = new ItemStack(Material.DIAMOND_PICKAXE);
-        ItemMeta toolMeta = tools.getItemMeta();
-        toolMeta.setDisplayName("§bTools");
-        tools.setItemMeta(toolMeta);
-        setItem(14, tools);
+        // Back
+        setItem(22, new MenuItem(ItemBuilder.from(Material.ARROW).name("§cBack").build(), event -> {
+            plugin.getGuiManager().openMenu(player, new MainMenu(plugin));
+        }));
+    }
 
-        // Misc
-        ItemStack misc = new ItemStack(Material.LAVA_BUCKET);
-        ItemMeta miscMeta = misc.getItemMeta();
-        miscMeta.setDisplayName("§eMisc");
-        misc.setItemMeta(miscMeta);
-        setItem(16, misc);
+    private void addFilterButton(int slot, AuctionFilter filter) {
+        ItemStack item = ItemBuilder.from(filter.getIcon())
+                .name("§a" + filter.getDisplayName())
+                .lore("§7Click to view " + filter.getDisplayName())
+                .build();
 
-        // Back Button
-        ItemStack back = new ItemStack(Material.ARROW);
-        ItemMeta backMeta = back.getItemMeta();
-        backMeta.setDisplayName("§cBack");
-        back.setItemMeta(backMeta);
-        setItem(22, back);
+        setItem(slot, new MenuItem(item, event -> {
+            plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new AuctionsMenu(plugin, null, filter));
+        }));
     }
 
     @Override
     public void onClose(Player player) {
-    }
-
-    @Override
-    public void handleClick(InventoryClickEvent event) {
-        int slot = event.getSlot();
-        if (slot == 22) {
-            // Go back
-            plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new MainMenu(plugin));
-        }
-        // Handle filter selection
-        if (slot == 10 || slot == 12 || slot == 14 || slot == 16) {
-            // Pass filter later, for now just open all
-            plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new AuctionsMenu(plugin));
-        }
     }
 }

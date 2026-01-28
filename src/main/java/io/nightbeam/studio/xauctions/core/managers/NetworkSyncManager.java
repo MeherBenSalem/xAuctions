@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.core.managers;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.api.storage.StorageProvider;
 import io.nightbeam.studio.xauctions.redis.RedisManager;
 
@@ -8,11 +8,11 @@ import java.util.UUID;
 
 public class NetworkSyncManager {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
     private final RedisManager redisManager;
     private StorageProvider storageProvider;
 
-    public NetworkSyncManager(xAuctions plugin) {
+    public NetworkSyncManager(XAuctionsPlugin plugin) {
         this.plugin = plugin;
         this.redisManager = new RedisManager(plugin);
     }

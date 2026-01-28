@@ -1,6 +1,6 @@
 package io.nightbeam.studio.xauctions.core.listeners;
 
-import io.nightbeam.studio.xauctions.xAuctions;
+import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.api.model.Auction;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,9 +12,9 @@ import java.util.List;
 
 public class PlayerConnectionListener implements Listener {
 
-    private final xAuctions plugin;
+    private final XAuctionsPlugin plugin;
 
-    public PlayerConnectionListener(xAuctions plugin) {
+    public PlayerConnectionListener(XAuctionsPlugin plugin) {
         this.plugin = plugin;
     }
 
