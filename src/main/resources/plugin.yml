@@ -1,0 +1,19 @@
+name: xAuctions
+version: '${project.version}'
+main: io.nightbeam.studio.xauctions.xAuctions
+api-version: 1.20
+commands:
+  ah:
+    description: Open the Auction House
+    aliases: [auctions, xauctions]
+  sell:
+    description: Quick sell item
+    aliases: [qs, sell]
+api-version: '1.20'
+authors: [Nightbeam Studio]
+description: Premium Auction House Plugin
+softdepend: [Vault, PlaceholderAPI]
+permissions:
+  xauctions.admin:
+    description: Admin permission for xAuctions
+    default: op

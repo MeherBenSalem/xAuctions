@@ -1,0 +1,26 @@
+# xAuctions Configuration
+# Nightbeam Studio
+
+# Storage Settings
+storage:
+  type: json # options: json, mysql
+  mysql:
+    host: localhost
+    port: 3306
+    database: xauctions
+    username: root
+    password: password
+    ssl: false
+
+# Integration
+discord-webhook-url: "" # Paste your Discord Webhook URL here
+
+# Economy
+economy:
+  default: vault # options: vault, playerpoints
+
+# Auction Settings
+auctions:
+  default-duration: 86400 # 24 hours in seconds
+  listing-fee-percent: 0.01
+  max-auctions-per-player: 10
