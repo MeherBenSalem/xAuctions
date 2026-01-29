@@ -5,7 +5,7 @@
 
     <groupId>io.nightbeam.studio</groupId>
     <artifactId>xAuctions</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>xAuctions</name>
@@ -146,6 +146,36 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <!-- Reduce unused classes and shrink jar size -->
+                            <minimizeJar>true</minimizeJar>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
+                                        <exclude>META-INF/LICENSE*</exclude>
+                                        <exclude>META-INF/NOTICE*</exclude>
+                                        <exclude>META-INF/DEPENDENCIES</exclude>
+                                        <exclude>META-INF/maven/**</exclude>
+                                        <exclude>META-INF/versions/**</exclude>
+                                        <exclude>META-INF/*.kotlin_module</exclude>
+                                        <exclude>META-INF/proguard/**</exclude>
+                                        <exclude>module-info.class</exclude>
+                                        <exclude>**/module-info.class</exclude>
+                                        <exclude>**/package-info.class</exclude>
+                                    </excludes>
+                                </filter>
+                                <!-- Keep shaded libraries that use reflection -->
+                                <filter>
+                                    <artifact>io.nightbeam.studio.xauctions.libs:*</artifact>
+                                    <includes>
+                                        <include>**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
                             <relocations>
                                 <relocation>
                                     <pattern>com.zaxxer.hikari</pattern>
@@ -156,6 +186,73 @@
                                     <shadedPattern>io.nightbeam.studio.xauctions.libs.jedis</shadedPattern>
                                 </relocation>
                             </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.yworks</groupId>
+                        <artifactId>yguard</artifactId>
+                        <version>4.1.1</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>obfuscate-with-yguard</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" classpathref="maven.plugin.classpath"/>
+                                <echo>=== Running yGuard Obfuscation ===</echo>
+                                <yguard>
+                                    <inoutpair in="target/${project.artifactId}-${project.version}.jar" out="target/${project.artifactId}-${project.version}-obf.jar"/>
+                                    <rename logfile="target/yguard-rename.log" replaceClassNameStrings="true">
+                                        <property name="naming-scheme" value="best"/>
+                                        <property name="language-conformity" value="compatible"/>
+                                        <keep>
+                                            <class name="io.nightbeam.studio.xauctions.XAuctionsPlugin"/>
+                                            <class classes="private" methods="public" fields="none">
+                                                <patternset>
+                                                    <include name="io.nightbeam.studio.xauctions.listeners.**"/>
+                                                </patternset>
+                                            </class>
+                                            <class classes="private" methods="public" fields="none">
+                                                <patternset>
+                                                    <include name="io.nightbeam.studio.xauctions.commands.**"/>
+                                                </patternset>
+                                            </class>
+                                            <class classes="private" methods="public" fields="none">
+                                                <patternset>
+                                                    <include name="io.nightbeam.studio.xauctions.integrations.**"/>
+                                                </patternset>
+                                            </class>
+                                            <!-- Exclude shaded libraries (use reflection) -->
+                                            <class classes="private" methods="private" fields="private">
+                                                <patternset>
+                                                    <include name="io.nightbeam.studio.xauctions.libs.**"/>
+                                                </patternset>
+                                            </class>
+                                            <!-- Exclude config/model/storage because field names map to YAML keys -->
+                                            <class classes="private" methods="private" fields="private">
+                                                <patternset>
+                                                    <include name="io.nightbeam.studio.xauctions.config.**"/>
+                                                    <include name="io.nightbeam.studio.xauctions.model.**"/>
+                                                    <include name="io.nightbeam.studio.xauctions.storage.**"/>
+                                                </patternset>
+                                            </class>
+                                        </keep>
+                                    </rename>
+                                </yguard>
+                                <echo>=== Obfuscation Complete: target/${project.artifactId}-${project.version}-obf.jar ===</echo>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>

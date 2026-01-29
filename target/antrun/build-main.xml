@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <taskdef classname="com.yworks.yguard.YGuardTask" name="yguard" classpathref="maven.plugin.classpath" />
+    <echo>=== Running yGuard Obfuscation ===</echo>
+    <yguard>
+      <inoutpair in="target/xAuctions-1.0.0.jar" out="target/xAuctions-1.0.0-obf.jar" />
+      <rename logfile="target/yguard-rename.log" replaceClassNameStrings="true">
+        <property name="naming-scheme" value="best" />
+        <property name="language-conformity" value="compatible" />
+        <keep>
+          <class name="io.nightbeam.studio.xauctions.XAuctionsPlugin" />
+          <class methods="public" classes="private" fields="none">
+            <patternset>
+              <include name="io.nightbeam.studio.xauctions.listeners.**" />
+            </patternset>
+          </class>
+          <class methods="public" classes="private" fields="none">
+            <patternset>
+              <include name="io.nightbeam.studio.xauctions.commands.**" />
+            </patternset>
+          </class>
+          <class methods="public" classes="private" fields="none">
+            <patternset>
+              <include name="io.nightbeam.studio.xauctions.integrations.**" />
+            </patternset>
+          </class>
+          <class methods="private" classes="private" fields="private">
+            <patternset>
+              <include name="io.nightbeam.studio.xauctions.libs.**" />
+            </patternset>
+          </class>
+          <class methods="private" classes="private" fields="private">
+            <patternset>
+              <include name="io.nightbeam.studio.xauctions.config.**" />
+              <include name="io.nightbeam.studio.xauctions.model.**" />
+              <include name="io.nightbeam.studio.xauctions.storage.**" />
+            </patternset>
+          </class>
+        </keep>
+      </rename>
+    </yguard>
+    <echo>=== Obfuscation Complete: target/xAuctions-1.0.0-obf.jar ===</echo>
+  </target>
+</project>
