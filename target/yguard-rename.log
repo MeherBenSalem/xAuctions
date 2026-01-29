@@ -3,7 +3,7 @@
 <!--
   yGuard Bytecode Obfuscator, v4.1.1, a Product of yWorks GmbH - http://www.yworks.com
 
-  Logfile created on Thu Jan 29 14:47:34 WAT 2026
+  Logfile created on Thu Jan 29 21:44:54 CET 2026
 
   Jar file to be obfuscated:           xAuctions-1.0.0.jar
   Target Jar file for obfuscated code: xAuctions-1.0.0-obf.jar
@@ -64,8 +64,8 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.java.JavaPlugin not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.java.JavaPlugin not found! -->
 <!--
-  Memory in use after class data structure built: 25295056 bytes
-  Total memory available                        : 92274688 bytes
+  Memory in use after class data structure built: 31872520 bytes
+  Total memory available                        : 119537664 bytes
 -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
@@ -93,11 +93,11 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
 <!-- WARNING: No mapping found: org.bukkit.event.HandlerList -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.Cancellable not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
@@ -106,11 +106,11 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
 <!-- WARNING: No mapping found: org.bukkit.event.HandlerList -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.Cancellable not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.HandlerList not found! -->
 <!-- WARNING: No mapping found: org.bukkit.event.Event -->
 <!-- WARNING: No mapping found: org.bukkit.event.Event -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.Event not found! -->
@@ -192,9 +192,9 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.Command not found! -->
 <!-- WARNING: No mapping found: org.bukkit.command.CommandSender -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandExecutor not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandSender not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandExecutor not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
@@ -226,12 +226,12 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandExecutor not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandSender not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.PlayerInventory not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandExecutor not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.Command not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.EventHandler not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -253,11 +253,11 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitTask not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.player.AsyncPlayerChatEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitScheduler not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.EventHandler not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.EventHandler not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.player.PlayerJoinEvent not found! -->
@@ -286,13 +286,23 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitTask not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.player.PlayerJoinEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.player.PlayerQuitEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitScheduler not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -304,20 +314,10 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.ItemStack -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: No mapping found: org.bukkit.Material -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
@@ -450,9 +450,9 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.PlayerInventory not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.World not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
@@ -497,6 +497,7 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
 <!-- WARNING: No mapping found: org.bukkit.Bukkit -->
+<!-- WARNING: No mapping found: org.bukkit.Bukkit -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
 <!-- WARNING: No mapping found: org.bukkit.Server -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.ServicesManager not found! -->
@@ -537,10 +538,14 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.Inventory not found! -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.Inventory -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.InventoryHolder not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Bukkit not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.Inventory not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.InventoryHolder not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
@@ -550,9 +555,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -611,11 +613,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.Inventory not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -654,7 +651,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryCloseEvent -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginManager not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -662,6 +658,7 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.Inventory not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryDragEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryCloseEvent not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -677,15 +674,12 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
-<!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -696,11 +690,11 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -723,18 +717,18 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
+<!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: No mapping found: org.bukkit.Material -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.ItemStack -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.ItemStack -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.meta.ItemMeta not found! -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.meta.ItemMeta -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.meta.ItemMeta -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
-<!-- WARNING: No mapping found: org.bukkit.Material -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -742,16 +736,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -759,9 +743,9 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.Inventory not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.meta.ItemMeta not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.meta.ItemMeta not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -776,9 +760,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -811,7 +792,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.ChatColor not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.meta.ItemMeta not found! -->
@@ -840,9 +820,6 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -864,17 +841,10 @@ to act on classes which have been obfuscated.
 <!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: No mapping found: org.bukkit.event.inventory.InventoryClickEvent -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
@@ -966,18 +936,15 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.Inventory not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.meta.BlockStateMeta not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.block.ShulkerBox not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.inventory.InventoryClickEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.HumanEntity not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -1018,13 +985,10 @@ to act on classes which have been obfuscated.
 <!-- WARNING: No mapping found: org.bukkit.inventory.PlayerInventory -->
 <!-- WARNING: No mapping found: org.bukkit.inventory.PlayerInventory -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: No mapping found: org.bukkit.Bukkit -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
-<!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: No mapping found: org.bukkit.entity.Player -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.World not found! -->
@@ -1034,6 +998,9 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.Location not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Item not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
@@ -1164,12 +1131,12 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: com.google.gson.JsonElement not found! -->
 <!-- WARNING: Unresolved external dependency: com.google.gson.JsonDeserializationContext not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: com.google.gson.JsonSerializer not found! -->
-<!-- WARNING: Unresolved external dependency: com.google.gson.JsonDeserializer not found! -->
 <!-- WARNING: Unresolved external dependency: com.google.gson.JsonPrimitive not found! -->
-<!-- WARNING: Unresolved external dependency: com.google.gson.JsonParseException not found! -->
 <!-- WARNING: Unresolved external dependency: com.google.gson.JsonElement not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
+<!-- WARNING: Unresolved external dependency: com.google.gson.JsonSerializer not found! -->
+<!-- WARNING: Unresolved external dependency: com.google.gson.JsonDeserializer not found! -->
+<!-- WARNING: Unresolved external dependency: com.google.gson.JsonParseException not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
@@ -1228,17 +1195,15 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
 <!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
 <!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
-<!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
-<!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
-<!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
-<!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.ScheduledTask not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Bukkit not found! -->
 <!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitScheduler not found! -->
 <!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.AsyncScheduler not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Entity not found! -->
 <!-- WARNING: Unresolved external dependency: io.papermc.paper.threadedregions.scheduler.EntityScheduler not found! -->
+<!-- WARNING: Unresolved external dependency: net.milkbowl.vault.economy.Economy not found! -->
 <!-- WARNING: No mapping found: org.bukkit.plugin.java.JavaPlugin -->
+<!-- WARNING: Unresolved external dependency: net.milkbowl.vault.economy.Economy not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginDescriptionFile not found! -->
 <!-- WARNING: No mapping found: org.bukkit.plugin.PluginDescriptionFile -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
@@ -1247,18 +1212,27 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginManager not found! -->
 <!-- WARNING: No mapping found: org.bukkit.plugin.PluginManager -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
+<!-- WARNING: No mapping found: org.bukkit.plugin.PluginManager -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
+<!-- WARNING: No mapping found: org.bukkit.Server -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.ServicesManager not found! -->
+<!-- WARNING: No mapping found: org.bukkit.plugin.ServicesManager -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.RegisteredServiceProvider not found! -->
+<!-- WARNING: No mapping found: org.bukkit.plugin.RegisteredServiceProvider -->
+<!-- WARNING: No mapping found: net.milkbowl.vault.economy.Economy -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.PluginCommand not found! -->
 <!-- WARNING: No mapping found: org.bukkit.command.PluginCommand -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.CommandExecutor not found! -->
 <!-- WARNING: No mapping found: org.bukkit.plugin.PluginManager -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
-<!-- WARNING: No mapping found: org.bukkit.plugin.PluginManager -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.java.JavaPlugin not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginDescriptionFile not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginManager not found! -->
+<!-- WARNING: Unresolved external dependency: net.milkbowl.vault.economy.Economy not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.ServicesManager not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.RegisteredServiceProvider not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.command.PluginCommand not found! -->
 <!-- WARNING: Unresolved external dependency: com.codahale.metrics.health.HealthCheckRegistry not found! -->
 <!-- WARNING: Unresolved external dependency: com.codahale.metrics.Timer not found! -->
@@ -1696,7 +1670,7 @@ to act on classes which have been obfuscated.
   <field class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="plugin"/>
   <field class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="layouts"/>
   <method class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="void loadLayout(java.io.File)"/>
-  <method class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="boolean lambda$0(java.io.File, java.lang.String)"/>
+  <method class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="boolean lambda$loadLayouts$0(java.io.File, java.lang.String)"/>
   <method class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="void loadLayouts()"/>
   <method class="io.nightbeam.studio.xauctions.config.menu.LayoutLoader" name="io.nightbeam.studio.xauctions.config.menu.MenuConfig getLayout(java.lang.String)"/>
   <class name="io.nightbeam.studio.xauctions.config.menu.MenuConfig"/>
@@ -1745,8 +1719,8 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="double maxPrice()"/>
   <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="double minPrice()"/>
   <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="long defaultDurationSeconds()"/>
-  <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="double listingFee()"/>
   <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="boolean allowDamaged()"/>
+  <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="double listingFee()"/>
   <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="java.lang.String toString()"/>
   <method class="io.nightbeam.studio.xauctions.config.AuctionSettings" name="boolean autoClaimOnJoin()"/>
   <class name="io.nightbeam.studio.xauctions.config.PluginConfig"/>
@@ -11937,43 +11911,43 @@ to act on classes which have been obfuscated.
   <field class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="auctionCache"/>
   <field class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="backupDir"/>
   <field class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="auctionsFile"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void lambda$saveAuction$0(io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void saveToFile()"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void invalidateCache(java.util.UUID)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.lang.Boolean lambda$9(java.util.UUID, java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.concurrent.CompletableFuture loadActiveAuctions()"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void lambda$3(io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.concurrent.CompletableFuture attemptBuy(java.util.UUID, java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.concurrent.CompletableFuture updateAuction(io.nightbeam.studio.xauctions.api.model.Auction)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="boolean lambda$8(java.util.UUID, io.nightbeam.studio.xauctions.api.model.Auction)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="boolean lambda$6(io.nightbeam.studio.xauctions.api.model.Auction)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void lambda$1(io.nightbeam.studio.xauctions.api.model.Auction)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.List lambda$5()"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.List lambda$7(java.util.UUID)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.List lambda$loadPlayerAuctions$0(java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void shutdown()"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="boolean lambda$loadPlayerAuctions$1(java.util.UUID, io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void init()"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.concurrent.CompletableFuture loadPlayerAuctions(java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.concurrent.CompletableFuture deleteAuction(java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.concurrent.CompletableFuture saveAuction(io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void createBackup()"/>
-  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void lambda$4(java.util.UUID)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="boolean lambda$loadActiveAuctions$1(io.nightbeam.studio.xauctions.api.model.Auction)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.lang.Boolean lambda$attemptBuy$0(java.util.UUID, java.util.UUID)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void lambda$deleteAuction$0(java.util.UUID)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void lambda$loadFromFile$0(io.nightbeam.studio.xauctions.api.model.Auction)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="java.util.List lambda$loadActiveAuctions$0()"/>
   <method class="io.nightbeam.studio.xauctions.storage.json.JsonStorageProvider" name="void loadFromFile()"/>
   <class name="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider"/>
   <field class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="plugin"/>
   <field class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="dataSource"/>
-  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.lang.Boolean lambda$1(java.util.UUID, java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.concurrent.CompletableFuture attemptBuy(java.util.UUID, java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.concurrent.CompletableFuture saveAuction(io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="io.nightbeam.studio.xauctions.api.model.Auction mapResultSetToAuction(java.sql.ResultSet)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void shutdown()"/>
-  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.List lambda$3()"/>
+  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void lambda$saveAuction$0(io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.concurrent.CompletableFuture loadPlayerAuctions(java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.concurrent.CompletableFuture loadActiveAuctions()"/>
-  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void lambda$2(java.util.UUID)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void lambda$deleteAuction$0(java.util.UUID)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.List lambda$loadPlayerAuctions$0(java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.concurrent.CompletableFuture deleteAuction(java.util.UUID)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.List lambda$4(java.util.UUID)"/>
-  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void lambda$0(io.nightbeam.studio.xauctions.api.model.Auction)"/>
+  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.List lambda$loadActiveAuctions$0()"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void init()"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void createTable()"/>
+  <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.lang.Boolean lambda$attemptBuy$0(java.util.UUID, java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="void invalidateCache(java.util.UUID)"/>
   <method class="io.nightbeam.studio.xauctions.storage.sql.SqlStorageProvider" name="java.util.concurrent.CompletableFuture updateAuction(io.nightbeam.studio.xauctions.api.model.Auction)"/>
   <method class="io.nightbeam.studio.xauctions.api.storage.StorageProvider" name="java.util.concurrent.CompletableFuture attemptBuy(java.util.UUID, java.util.UUID)"/>
@@ -13646,18 +13620,19 @@ to act on classes which have been obfuscated.
   <class name="io.nightbeam.studio.xauctions.gui.framework.MenuAction" map="c"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.MenuAction" name="void execute(org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" map="d"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="ENUM$VALUES" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="displayName" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="CONSUMABLES" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="ALL" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="displayName" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="CONSUMABLES" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="ALL" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="$VALUES" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="MISC" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="icon" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="WEAPONS" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="BLOCKS" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter[] $values()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter valueOf(java.lang.String)" map="valueOf"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="java.lang.String getDisplayName()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter[] values()" map="values"/>
-  <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="java.lang.String getDisplayName()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="org.bukkit.Material getIcon()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="org.bukkit.Material getIcon()" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.AuctionFilter" name="org.bukkit.inventory.ItemStack getDisplayItem(boolean)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.framework.MenuItem" map="e"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.MenuItem" name="itemStack" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -13666,120 +13641,121 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.gui.framework.MenuItem" name="org.bukkit.inventory.ItemStack getItemStack()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.MenuItem" name="io.nightbeam.studio.xauctions.gui.framework.MenuAction getAction()" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <class name="io.nightbeam.studio.xauctions.gui.framework.SoundKey" map="f"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="ENUM$VALUES" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="ERROR" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="OPEN_MENU" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="ERROR" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="OPEN_MENU" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="$VALUES" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="SUCCESS" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="CLICK" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="PURCHASE" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="io.nightbeam.studio.xauctions.gui.framework.SoundKey valueOf(java.lang.String)" map="valueOf"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="io.nightbeam.studio.xauctions.gui.framework.SoundKey[] values()" map="values"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.SoundKey" name="io.nightbeam.studio.xauctions.gui.framework.SoundKey[] $values()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" map="g"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="itemSlots" map="itemSlots"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="page" map="page"/>
   <field class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="maxItemsPerPage" map="maxItemsPerPage"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void loopCode(java.lang.Object, int)" map="loopCode"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
-  <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void lambda$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void lambda$addNavigationButtons$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="int getPage()" map="getPage"/>
-  <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void lambda$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
-  <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void lambda$2(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="java.util.List getData()" map="getData"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void addMenuBorder()" map="addMenuBorder"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void lambda$addNavigationButtons$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void addNavigationButtons(int)" map="addNavigationButtons"/>
+  <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void lambda$addNavigationButtons$2(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <method class="io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu" name="void update()" map="update"/>
   <package name="io.nightbeam.studio.xauctions.gui.menus" map="c"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" map="b"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void lambda$1(io.nightbeam.studio.xauctions.gui.framework.AuctionFilter, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void lambda$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void lambda$update$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void lambda$addFilterButton$0(io.nightbeam.studio.xauctions.gui.framework.AuctionFilter, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void addFilterButton(int, io.nightbeam.studio.xauctions.gui.framework.AuctionFilter)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.CategoryMenu" name="void update()" map="update"/>
+  <class name="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu$1" map="1"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu$1" name="$SwitchMap$io$nightbeam$studio$xauctions$gui$framework$AuctionFilter" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" map="c"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="currentFilter" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="$SWITCH_TABLE$io$nightbeam$studio$xauctions$gui$framework$AuctionFilter" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="cachedAuctions" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="searchQuery" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="int[] $SWITCH_TABLE$io$nightbeam$studio$xauctions$gui$framework$AuctionFilter()" map="$SWITCH_TABLE$io$nightbeam$studio$xauctions$gui$framework$AuctionFilter"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$3(org.bukkit.entity.Player)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="cachedAuctions" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="searchQuery" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void loopCode(io.nightbeam.studio.xauctions.api.model.Auction, int)" map="loopCode"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void loopCode(java.lang.Object, int)" map="loopCode"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$6(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$5(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$loopCode$2(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="boolean lambda$getData$0(io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$addNavigationButtons$2(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$4(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$addNavigationButtons$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void addNavigationButtons(int)" map="addNavigationButtons"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$1(org.bukkit.inventory.ItemStack, io.nightbeam.studio.xauctions.api.model.Auction, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$loopCode$0(org.bukkit.inventory.ItemStack, io.nightbeam.studio.xauctions.api.model.Auction, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="java.util.List getData()" map="getData"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="java.lang.String formatTime(long)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="boolean matchFilter(org.bukkit.inventory.ItemStack, io.nightbeam.studio.xauctions.gui.framework.AuctionFilter)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$2(io.nightbeam.studio.xauctions.api.model.Auction, org.bukkit.entity.Player)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$7(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void addMenuBorder()" map="addMenuBorder"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$8(int, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$loopCode$3(org.bukkit.entity.Player)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$addNavigationButtons$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$addNavigationButtons$3(int, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void lambda$loopCode$1(io.nightbeam.studio.xauctions.api.model.Auction, org.bukkit.entity.Player)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="void update()" map="update"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu" name="boolean lambda$0(io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" map="d"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="menuItems" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="previousMenu" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="shulkerItem" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void lambda$update$0(org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void lambda$update$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void setItem(int, io.nightbeam.studio.xauctions.gui.framework.MenuItem)" map="setItem"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void lambda$0(org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void update()" map="update"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void lambda$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu" name="void handleClick(org.bukkit.event.inventory.InventoryClickEvent)" map="handleClick"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" map="e"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="config" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="config" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="void lambda$update$0(io.nightbeam.studio.xauctions.config.menu.MenuItemConfig, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="void update()" map="update"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="void lambda$0(io.nightbeam.studio.xauctions.config.menu.MenuItemConfig, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfigurableMenu" name="void handleAction(org.bukkit.entity.Player, java.lang.String, java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" map="f"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="targetPlayer" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="viewer" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <field class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="auctionMap" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void lambda$1(java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void lambda$0(java.util.List)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void lambda$update$1(java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void lambda$update$0(java.util.List)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="java.lang.String formatTime(long)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void update()" map="update"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.PlayerSellingMenu" name="void handleClick(org.bukkit.event.inventory.InventoryClickEvent)" map="handleClick"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.MainMenu" map="g"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$2(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$3(org.bukkit.event.inventory.InventoryClickEvent)" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$0(org.bukkit.event.inventory.InventoryClickEvent)" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$update$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$update$1(org.bukkit.event.inventory.InventoryClickEvent)" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$update$2(org.bukkit.event.inventory.InventoryClickEvent)" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$update$3(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d2;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000while"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void update()" map="update"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.MainMenu" name="void lambda$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d2;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000while"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" map="h"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="cachedData" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="cachedData" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void loopCode(java.lang.Object, int)" map="loopCode"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$0(java.util.List)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="int lambda$1(io.nightbeam.studio.xauctions.api.model.Auction, io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$update$2()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$update$0(java.util.List)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="java.util.List getData()" map="getData"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$3(io.nightbeam.studio.xauctions.api.model.Auction, boolean, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$4(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$2()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$addNavigationButtons$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void addNavigationButtons(int)" map="addNavigationButtons"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void loopCode(io.nightbeam.studio.xauctions.api.model.Auction, int)" map="loopCode"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void update()" map="update"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="void lambda$loopCode$0(io.nightbeam.studio.xauctions.api.model.Auction, boolean, org.bukkit.event.inventory.InventoryClickEvent)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.AuctionHistoryMenu" name="int lambda$update$1(io.nightbeam.studio.xauctions.api.model.Auction, io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" map="i"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="onConfirm" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="description" map="&#x00d2;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000while"/>
-  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="onCancel" map="&#x00d3;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000public"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void lambda$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d3;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000public"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="onConfirm" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="description" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
+  <field class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="onCancel" map="&#x00d2;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000while"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void lambda$update$0(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d3;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000public"/>
+  <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void lambda$update$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d4;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000private"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void onOpen(org.bukkit.entity.Player)" map="onOpen"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void onClose(org.bukkit.entity.Player)" map="onClose"/>
   <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void update()" map="update"/>
-  <method class="io.nightbeam.studio.xauctions.gui.menus.ConfirmationMenu" name="void lambda$1(org.bukkit.event.inventory.InventoryClickEvent)" map="&#x00d4;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000private"/>
   <class name="io.nightbeam.studio.xauctions.gui.AbstractMenu" map="b"/>
   <field class="io.nightbeam.studio.xauctions.gui.AbstractMenu" name="size" map="size"/>
   <field class="io.nightbeam.studio.xauctions.gui.AbstractMenu" name="plugin" map="plugin"/>
@@ -13808,24 +13784,24 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.core.commands.AuctionsCommand" name="boolean onCommand(org.bukkit.command.CommandSender, org.bukkit.command.Command, java.lang.String, java.lang.String[])" map="onCommand"/>
   <class name="io.nightbeam.studio.xauctions.core.commands.SellCommand" map="c"/>
   <field class="io.nightbeam.studio.xauctions.core.commands.SellCommand" name="plugin" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.core.commands.SellCommand" name="java.lang.Void lambda$1(org.bukkit.entity.Player, java.lang.Throwable)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.core.commands.SellCommand" name="void lambda$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.commands.SellCommand" name="java.lang.Void lambda$onCommand$1(org.bukkit.entity.Player, java.lang.Throwable)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.commands.SellCommand" name="void lambda$onCommand$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.core.commands.SellCommand" name="boolean onCommand(org.bukkit.command.CommandSender, org.bukkit.command.Command, java.lang.String, java.lang.String[])" map="onCommand"/>
   <package name="io.nightbeam.studio.xauctions.core.listeners" map="c"/>
   <class name="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" map="b"/>
   <field class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="plugin" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="boolean lambda$1(io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="boolean lambda$onJoin$1(io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="void onQuit(org.bukkit.event.player.PlayerQuitEvent)" map="onQuit"/>
-  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="void lambda$0(org.bukkit.entity.Player, java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="void lambda$onJoin$3(org.bukkit.entity.Player, long, long)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="void lambda$onJoin$0(org.bukkit.entity.Player, java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="boolean lambda$onJoin$2(io.nightbeam.studio.xauctions.api.model.Auction)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="void onJoin(org.bukkit.event.player.PlayerJoinEvent)" map="onJoin"/>
-  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="boolean lambda$2(io.nightbeam.studio.xauctions.api.model.Auction)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <method class="io.nightbeam.studio.xauctions.core.listeners.PlayerConnectionListener" name="void lambda$3(org.bukkit.entity.Player, long, long)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.core.listeners.InputListener" map="c"/>
   <field class="io.nightbeam.studio.xauctions.core.listeners.InputListener" name="plugin" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <field class="io.nightbeam.studio.xauctions.core.listeners.InputListener" name="awaitingSearch" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.core.listeners.InputListener" name="void awaitSearch(org.bukkit.entity.Player)" map="awaitSearch"/>
+  <method class="io.nightbeam.studio.xauctions.core.listeners.InputListener" name="void lambda$onChat$0(org.bukkit.entity.Player, java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.core.listeners.InputListener" name="void onChat(org.bukkit.event.player.AsyncPlayerChatEvent)" map="onChat"/>
-  <method class="io.nightbeam.studio.xauctions.core.listeners.InputListener" name="void lambda$0(org.bukkit.entity.Player, java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <package name="io.nightbeam.studio.xauctions.core.managers" map="d"/>
   <class name="io.nightbeam.studio.xauctions.core.managers.NetworkSyncManager" map="b"/>
   <field class="io.nightbeam.studio.xauctions.core.managers.NetworkSyncManager" name="redisManager" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -13845,14 +13821,14 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.core.managers.TaxManager" name="double calculateTax(double, org.bukkit.inventory.ItemStack)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.core.managers.AuctionManager" map="d"/>
   <field class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="plugin" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$2(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$0(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack, double, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void createAuction(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack, double, long, java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$3(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$cancelAuction$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$createAuction$0(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack, double, io.nightbeam.studio.xauctions.api.model.Result)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void cancelAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void buyAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$1(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void collectAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$buyAuction$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.core.managers.AuctionManager" name="void lambda$collectAuction$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Result)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <class name="io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager" map="e"/>
   <field class="io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager" name="blacklistedUuids" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <field class="io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager" name="plugin" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
@@ -13902,22 +13878,22 @@ to act on classes which have been obfuscated.
   <field class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="activeCount" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <field class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="countInitialized" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <field class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="plugin" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$6(java.lang.Void)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$3(java.lang.Throwable)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$cancelAuction$0(java.lang.Void)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="void lambda$getActiveCount$0(java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletableFuture buyAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletionStage lambda$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.config.PluginConfig, io.nightbeam.studio.xauctions.api.model.AuctionRequest, java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletionStage lambda$buyAuction$0(io.nightbeam.studio.xauctions.api.economy.EconomyProvider, org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction, java.lang.Boolean)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$doCreateAuction$0(io.nightbeam.studio.xauctions.api.model.Auction, java.lang.Void)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$buyAuction$1(java.lang.Void)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="int getActiveCount()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$2(io.nightbeam.studio.xauctions.api.model.Auction, java.lang.Void)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="void lambda$9(java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletionStage lambda$4(io.nightbeam.studio.xauctions.api.economy.EconomyProvider, org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction, java.lang.Boolean)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$7(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.economy.EconomyProvider, double, double, java.lang.Void)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$collectAuction$1(java.lang.Void)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletableFuture createAuction(io.nightbeam.studio.xauctions.api.model.AuctionRequest)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$5(java.lang.Void)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletionStage lambda$createAuction$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.config.PluginConfig, io.nightbeam.studio.xauctions.api.model.AuctionRequest, java.util.List)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletableFuture cancelAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$collectAuction$0(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.economy.EconomyProvider, double, double, java.lang.Void)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletableFuture collectAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="java.util.concurrent.CompletableFuture doCreateAuction(org.bukkit.entity.Player, io.nightbeam.studio.xauctions.api.model.AuctionRequest, io.nightbeam.studio.xauctions.config.PluginConfig)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="boolean lambda$1(io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$8(java.lang.Void)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="io.nightbeam.studio.xauctions.api.model.Result lambda$doCreateAuction$1(java.lang.Throwable)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl" name="boolean lambda$createAuction$1(io.nightbeam.studio.xauctions.api.model.Auction)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.libs.jedis.gears.resps.FunctionInfo$1" map="1"/>
   <class name="io.nightbeam.studio.xauctions.libs.jedis.gears.resps.GearsLibraryInfo$2" map="2"/>
   <class name="io.nightbeam.studio.xauctions.libs.jedis.gears.resps.GearsLibraryInfo$1" map="1"/>
@@ -14084,15 +14060,16 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="long durationSeconds()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="org.bukkit.inventory.ItemStack item()" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="java.lang.String toString()" map="toString"/>
-  <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="org.bukkit.entity.Player seller()" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
-  <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType type()" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
+  <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType type()" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
+  <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="org.bukkit.entity.Player seller()" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <method class="io.nightbeam.studio.xauctions.api.model.AuctionRequest" name="java.lang.String currency()" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
   <class name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" map="_b"/>
   <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="BID" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="ENUM$VALUES" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="BIN" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="BIN" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="$VALUES" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType[] values()" map="values"/>
   <method class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType valueOf(java.lang.String)" map="valueOf"/>
+  <method class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType" name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionType[] $values()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <class name="io.nightbeam.studio.xauctions.api.model.Auction$AuctionBuilder" map="_c"/>
   <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionBuilder" name="expireTime" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <field class="io.nightbeam.studio.xauctions.api.model.Auction$AuctionBuilder" name="requestTime" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
@@ -14214,17 +14191,17 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.utils.Log" name="void warn(java.lang.String, java.lang.Throwable)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <class name="io.nightbeam.studio.xauctions.utils.SchedulerUtils" map="c"/>
   <field class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="isFolia" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$run$0(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$runTimerAsync$0(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void runTimer(org.bukkit.plugin.Plugin, java.lang.Runnable, long, long)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$4(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$1(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$runLater$0(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void runTimerAsync(org.bukkit.plugin.Plugin, java.lang.Runnable, long, long)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$3(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$0(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void runAsync(org.bukkit.plugin.Plugin, java.lang.Runnable)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void run(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity, java.lang.Runnable)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$runTimer$0(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="boolean isFolia()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void runLater(org.bukkit.plugin.Plugin, java.lang.Runnable, long)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$2(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
+  <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void lambda$runAsync$0(java.lang.Runnable, io.papermc.paper.threadedregions.scheduler.ScheduledTask)" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <method class="io.nightbeam.studio.xauctions.utils.SchedulerUtils" name="void run(org.bukkit.plugin.Plugin, java.lang.Runnable)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <class name="io.nightbeam.studio.xauctions.utils.ItemStackGsonAdapter" map="d"/>
   <method class="io.nightbeam.studio.xauctions.utils.ItemStackGsonAdapter" name="java.lang.Object deserialize(com.google.gson.JsonElement, java.lang.reflect.Type, com.google.gson.JsonDeserializationContext)" map="deserialize"/>
@@ -14268,15 +14245,17 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.addons.xAuctionsExpansion" name="java.lang.String onRequest(org.bukkit.OfflinePlayer, java.lang.String)" map="onRequest"/>
   <class name="io.nightbeam.studio.xauctions.addons.DiscordWebhook" map="c"/>
   <field class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="url" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void sendEmbed(java.lang.String, java.lang.String, int)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void lambda$0(java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void lambda$sendEmbed$0(java.lang.String, java.lang.String, int)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void lambda$send$0(java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void sendEmbed(java.lang.String, java.lang.String, int)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void send(java.lang.String)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
-  <method class="io.nightbeam.studio.xauctions.addons.DiscordWebhook" name="void lambda$1(java.lang.String, java.lang.String, int)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <package name="io.nightbeam.studio.xauctions.economy" map="i"/>
   <package name="io.nightbeam.studio.xauctions.economy.impl" map="b"/>
   <class name="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" map="b"/>
   <field class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="economy" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="available" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="double getBalance(org.bukkit.OfflinePlayer)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="boolean isAvailable()" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="java.lang.String format(double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="java.lang.String getCurrencyName()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="boolean deposit(org.bukkit.OfflinePlayer, double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -14284,7 +14263,7 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="boolean withdraw(org.bukkit.OfflinePlayer, double)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.VaultProvider" name="boolean has(org.bukkit.OfflinePlayer, double)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <class name="io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider" map="c"/>
-  <field class="io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider" name="ppAPI" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider" name="ppAPI" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider" name="double getBalance(org.bukkit.OfflinePlayer)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider" name="java.lang.String format(double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider" name="java.lang.String getCurrencyName()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -14301,16 +14280,16 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider" name="boolean withdraw(org.bukkit.OfflinePlayer, double)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider" name="boolean has(org.bukkit.OfflinePlayer, double)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <class name="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" map="e"/>
-  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="name" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="currencyMaterial" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="name" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="currencyMaterial" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="double getBalance(org.bukkit.OfflinePlayer)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="java.lang.String format(double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="java.lang.String getCurrencyName()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="boolean deposit(org.bukkit.OfflinePlayer, double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="void lambda$deposit$0(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="java.lang.String getId()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="boolean withdraw(org.bukkit.OfflinePlayer, double)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="boolean has(org.bukkit.OfflinePlayer, double)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="void lambda$0(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <package name="io.nightbeam.studio.xauctions.redis" map="j"/>
   <class name="io.nightbeam.studio.xauctions.redis.RedisManager$1" map="1"/>
   <field class="io.nightbeam.studio.xauctions.redis.RedisManager$1" name="this$0" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -14322,11 +14301,11 @@ to act on classes which have been obfuscated.
   <field class="io.nightbeam.studio.xauctions.redis.RedisManager" name="plugin" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
   <field class="io.nightbeam.studio.xauctions.redis.RedisManager" name="listener" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void startSubscription()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void lambda$publishUpdate$0(java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void setListener(java.util.function.BiConsumer)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void lambda$0()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void lambda$startSubscription$0()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void init()" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void publishUpdate(java.lang.String)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
-  <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void lambda$1(java.lang.String)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void publishUpdate(java.lang.String)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.redis.RedisManager" name="void shutdown()" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="guiManager" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="storageProvider" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
@@ -14334,15 +14313,17 @@ to act on classes which have been obfuscated.
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="taxManager" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="itemBlacklistManager" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="messageManager" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="auctionManager" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="pluginConfig" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="playerBlacklistManager" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="antiDupeManager" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="inputListener" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="discordWebhook" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="listingLimitManager" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="auctionService" map="&#x00d2;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000while"/>
-  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="instance" map="&#x00d3;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000public"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="vaultEnabled" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="auctionManager" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="vaultEconomy" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="pluginConfig" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="playerBlacklistManager" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="antiDupeManager" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="inputListener" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="discordWebhook" map="&#x00d2;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000while"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="listingLimitManager" map="&#x00d3;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000public"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="auctionService" map="&#x00d4;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000private"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="instance" map="&#x00d5;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000interface"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void onEnable()" map="onEnable"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.XAuctionsPlugin getInstance()" map="getInstance"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void registerListeners()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -14366,7 +14347,8 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.security.AntiDupeManager getAntiDupeManager()" map="getAntiDupeManager"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.core.managers.EconomyManager getEconomyManager()" map="getEconomyManager"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.api.service.AuctionService getAuctionService()" map="getAuctionService"/>
-  <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void loadConfiguration()" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
+  <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void setupEconomy()" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
+  <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void loadConfiguration()" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void reload()" map="reload"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.api.storage.StorageProvider getStorageProvider()" map="getStorageProvider"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.core.listeners.InputListener getInputListener()" map="getInputListener"/>

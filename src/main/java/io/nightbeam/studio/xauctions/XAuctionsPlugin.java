@@ -20,6 +20,8 @@ import io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl;
 import io.nightbeam.studio.xauctions.core.managers.TaxManager;
 import io.nightbeam.studio.xauctions.core.managers.ListingLimitManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import net.milkbowl.vault.economy.Economy;
+import org.bukkit.plugin.RegisteredServiceProvider;
 
 import java.util.logging.Level;
 
@@ -55,6 +57,10 @@ public class XAuctionsPlugin extends JavaPlugin {
     // Configuration
     private PluginConfig pluginConfig;
 
+    // Vault economy flag and reference (optional)
+    private boolean vaultEnabled = false;
+    private Economy vaultEconomy = null;
+
     // ... [skipping to getters]
 
     @Override
@@ -73,6 +79,9 @@ public class XAuctionsPlugin extends JavaPlugin {
         try {
             // Load configuration
             loadConfiguration();
+
+            // Setup optional Vault economy (safe, non-throwing)
+            setupEconomy();
 
             // Initialize managers in proper order
             initializeManagers();
@@ -121,6 +130,37 @@ public class XAuctionsPlugin extends JavaPlugin {
 
         if (pluginConfig.isDebugMode()) {
             getLogger().info("[DEBUG] Debug mode is enabled.");
+        }
+    }
+
+    /**
+     * Safely attempts to hook into Vault's Economy via ServicesManager.
+     * This method never throws; it only sets {@code vaultEnabled} to true
+     * when a valid provider is found.
+     */
+    private void setupEconomy() {
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            getLogger().warning("Vault not found — disabling Vault economy support.");
+            vaultEnabled = false;
+            return;
+        }
+
+        RegisteredServiceProvider<Economy> rsp =
+                getServer().getServicesManager().getRegistration(Economy.class);
+
+        if (rsp == null || rsp.getProvider() == null) {
+            getLogger().warning("No economy provider found — install EssentialsX, CMI, or another Vault-compatible economy.");
+            vaultEnabled = false;
+            return;
+        }
+
+        try {
+            vaultEconomy = rsp.getProvider();
+            vaultEnabled = true;
+            getLogger().info("Hooked into economy: " + vaultEconomy.getName());
+        } catch (Throwable t) {
+            vaultEnabled = false;
+            getLogger().warning("Failed to initialize Vault economy provider — disabling Vault economy support.");
         }
     }
 

@@ -5,17 +5,41 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import java.util.logging.Logger;
 
+/**
+ * Safe Vault provider wrapper. Never throws on missing Vault or provider.
+ * Consumers should check {@link #isAvailable()} before relying on Vault-specific behavior.
+ */
 public class VaultProvider implements EconomyProvider {
 
     private final Economy economy;
+    private final boolean available;
 
     public VaultProvider() {
-        RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) {
-            throw new IllegalStateException("Vault Economy not found!");
+        Logger logger = Bukkit.getLogger();
+        RegisteredServiceProvider<Economy> rsp =
+                Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
+
+        if (rsp == null || rsp.getProvider() == null) {
+            this.economy = null;
+            this.available = false;
+            if (rsp == null) {
+                logger.fine("Vault RegisteredServiceProvider<Economy> not found.");
+            } else {
+                logger.fine("Vault RegisteredServiceProvider returned null provider.");
+            }
+        } else {
+            this.economy = rsp.getProvider();
+            this.available = true;
         }
-        this.economy = rsp.getProvider();
+    }
+
+    /**
+     * True if Vault + an Economy provider are available and hooked.
+     */
+    public boolean isAvailable() {
+        return available;
     }
 
     @Override
@@ -25,31 +49,61 @@ public class VaultProvider implements EconomyProvider {
 
     @Override
     public String getCurrencyName() {
-        return economy.currencyNamePlural();
+        if (!available) return "Vault";
+        try {
+            return economy.currencyNamePlural();
+        } catch (Throwable t) {
+            return "Vault";
+        }
     }
 
     @Override
     public boolean has(OfflinePlayer player, double amount) {
-        return economy.has(player, amount);
+        if (!available) return false;
+        try {
+            return economy.has(player, amount);
+        } catch (Throwable t) {
+            return false;
+        }
     }
 
     @Override
     public boolean withdraw(OfflinePlayer player, double amount) {
-        return economy.withdrawPlayer(player, amount).transactionSuccess();
+        if (!available) return false;
+        try {
+            return economy.withdrawPlayer(player, amount).transactionSuccess();
+        } catch (Throwable t) {
+            return false;
+        }
     }
 
     @Override
     public boolean deposit(OfflinePlayer player, double amount) {
-        return economy.depositPlayer(player, amount).transactionSuccess();
+        if (!available) return false;
+        try {
+            return economy.depositPlayer(player, amount).transactionSuccess();
+        } catch (Throwable t) {
+            return false;
+        }
     }
 
     @Override
     public double getBalance(OfflinePlayer player) {
-        return economy.getBalance(player);
+        if (!available) return 0.0;
+        try {
+            return economy.getBalance(player);
+        } catch (Throwable t) {
+            return 0.0;
+        }
     }
 
     @Override
     public String format(double amount) {
-        return economy.format(amount);
+        if (!available) return String.valueOf(amount);
+        try {
+            return economy.format(amount);
+        } catch (Throwable t) {
+            return String.valueOf(amount);
+        }
     }
 }
