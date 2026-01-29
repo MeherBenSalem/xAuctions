@@ -20,8 +20,15 @@ import io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl;
 import io.nightbeam.studio.xauctions.core.managers.TaxManager;
 import io.nightbeam.studio.xauctions.core.managers.ListingLimitManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import java.util.logging.Level;
 
@@ -68,13 +75,38 @@ public class XAuctionsPlugin extends JavaPlugin {
         instance = this;
         long startTime = System.currentTimeMillis();
 
-        getLogger().info("§b__  __    _             _   _                 ");
-        getLogger().info("§b\\ \\/ /   / \\  _   _  ___| |_(_) ___  _ __  ___ ");
-        getLogger().info("§b \\  /   / _ \\| | | |/ __| __| |/ _ \\| '_ \\/ __|");
-        getLogger().info("§b /  \\  / ___ \\ |_| | (__| |_| | (_) | | | \\__ \\");
-        getLogger().info("§b/_/\\_\\/_/   \\_\\__,_|\\___|\\__|_|\\___/|_| |_|___/");
-        getLogger().info("§fPremium Auction House §7v" + getDescription().getVersion());
-        getLogger().info("§7Running on " + getServer().getVersion());
+        // Colored ASCII-art startup banner (uses ChatColor constants, not '&' codes)
+        String ver = fetchRemoteVersion();
+        String server = getServer().getVersion();
+
+        // Normalize version display (ensure single leading 'v')
+        String displayVer = (ver != null && ver.startsWith("v")) ? ver : "v" + ver;
+
+        // Try to load ASCII banner from resource to avoid escape issues.
+        try (var is = getResource("banner.txt")) {
+            if (is != null) {
+                var br = new java.io.BufferedReader(
+                        new java.io.InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String colored = ChatColor.AQUA + line;
+                    Bukkit.getConsoleSender().sendMessage(colored); // Log to console
+                }
+                // Single plain log entry summarizing banner (avoids per-line duplication in
+                // server logs)
+                getLogger().info("Premium Auction House " + displayVer + " - Running on " + server);
+            } else {
+                // fallback: simple single-line banner
+                String colored = ChatColor.AQUA + "=== xAuctions ===";
+                Bukkit.getConsoleSender().sendMessage(colored);
+                getLogger().info("Premium Auction House " + displayVer + " - Running on " + server);
+            }
+        } catch (Exception e) {
+            // if resource read fails, fallback gracefully
+            String colored = ChatColor.AQUA + "=== xAuctions ===";
+            Bukkit.getConsoleSender().sendMessage(colored);
+            getLogger().info("xAuctions startup banner displayed (console-only). Version: " + displayVer);
+        }
 
         try {
             // Load configuration
@@ -95,6 +127,9 @@ public class XAuctionsPlugin extends JavaPlugin {
             // Load integrations
             loadIntegrations();
 
+            // Check for updates asynchronously (safe, non-blocking)
+            checkForUpdates();
+
             long loadTime = System.currentTimeMillis() - startTime;
             getLogger().info("xAuctions loaded successfully in " + loadTime + "ms!");
 
@@ -102,6 +137,32 @@ public class XAuctionsPlugin extends JavaPlugin {
             getLogger().log(Level.SEVERE, "Failed to initialize xAuctions!", e);
             getServer().getPluginManager().disablePlugin(this);
         }
+    }
+
+    /**
+     * Asynchronously checks the remote version and logs if an update is available.
+     */
+    private void checkForUpdates() {
+        Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+            try {
+                String remote = fetchRemoteVersion();
+                if (remote == null || remote.isBlank())
+                    return;
+                String remoteClean = remote.startsWith("v") ? remote.substring(1) : remote;
+                String local = getDescription().getVersion();
+                if (!remoteClean.equals(local)) {
+                    String msg = "A new xAuctions version is available: " + remote + " (installed: v" + local + ").";
+                    getLogger().info(msg);
+                    // also print a colored console message for visibility
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[xAuctions] " + msg);
+                } else {
+                    String msg = "xAuctions is up to date (v" + local + ").";
+                    getLogger().info(msg);
+                }
+            } catch (Throwable t) {
+                // ignore failures silently
+            }
+        });
     }
 
     @Override
@@ -145,11 +206,11 @@ public class XAuctionsPlugin extends JavaPlugin {
             return;
         }
 
-        RegisteredServiceProvider<Economy> rsp =
-                getServer().getServicesManager().getRegistration(Economy.class);
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
 
         if (rsp == null || rsp.getProvider() == null) {
-            getLogger().warning("No economy provider found — install EssentialsX, CMI, or another Vault-compatible economy.");
+            getLogger().warning(
+                    "No economy provider found — install EssentialsX, CMI, or another Vault-compatible economy.");
             vaultEnabled = false;
             return;
         }
@@ -162,6 +223,34 @@ public class XAuctionsPlugin extends JavaPlugin {
             vaultEnabled = false;
             getLogger().warning("Failed to initialize Vault economy provider — disabling Vault economy support.");
         }
+    }
+
+    /**
+     * Attempts to fetch the public version string from the remote text file.
+     * Falls back to the plugin's own version on any error or timeout.
+     */
+    private String fetchRemoteVersion() {
+        String remoteUrl = "https://raw.githubusercontent.com/MeherBenSalem/VersionChecker/main/versions_xAuctions.txt";
+        try {
+            URL url = new URL(remoteUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setConnectTimeout(2000);
+            conn.setReadTimeout(2000);
+            conn.setRequestMethod("GET");
+            int code = conn.getResponseCode();
+            if (code != 200)
+                return getDescription().getVersion();
+            try (BufferedReader br = new BufferedReader(
+                    new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
+                String line = br.readLine();
+                if (line != null && !line.isBlank()) {
+                    return line.trim();
+                }
+            }
+        } catch (Exception ignored) {
+            // ignore and fall back
+        }
+        return getDescription().getVersion();
     }
 
     /**
@@ -250,12 +339,17 @@ public class XAuctionsPlugin extends JavaPlugin {
             getLogger().warning("Failed to register 'ah' command - not defined in plugin.yml");
         }
 
-        var sellCommand = getCommand("sell");
-        if (sellCommand != null) {
-            sellCommand.setExecutor(new SellCommand(this));
-            debug("Command 'sell' registered.");
+        // Register top-level /sell only if enabled in config
+        if (pluginConfig.isTopLevelSellEnabled()) {
+            var sellCommand = getCommand("sell");
+            if (sellCommand != null) {
+                sellCommand.setExecutor(new SellCommand(this));
+                debug("Command 'sell' registered.");
+            } else {
+                getLogger().warning("Failed to register 'sell' command - not defined in plugin.yml");
+            }
         } else {
-            getLogger().warning("Failed to register 'sell' command - not defined in plugin.yml");
+            debug("Top-level 'sell' command disabled via config; use '/ah sell <price>' instead.");
         }
     }
 

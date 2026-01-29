@@ -81,3 +81,9 @@ integrations:
     # Webhook URL for sending auction alerts to a Discord channel.
     # Leave empty to disable Discord integration.
     webhook-url: ""
+
+# Command settings
+commands:
+  # If true, the top-level `/sell` command will be enabled.
+  # Default: false — prefer `/ah sell <price>` as the canonical usage.
+  enable-top-level-sell: false

@@ -18,6 +18,7 @@ public class PluginConfig {
     private String soundClick;
     private String soundPurchase;
     private String soundError;
+    private boolean enableTopLevelSell;
 
     public PluginConfig(XAuctionsPlugin plugin) {
         this.plugin = plugin;
@@ -61,6 +62,9 @@ public class PluginConfig {
         this.soundClick = config.getString("gui.sounds.click", "UI_BUTTON_CLICK");
         this.soundPurchase = config.getString("gui.sounds.purchase", "ENTITY_PLAYER_LEVELUP");
         this.soundError = config.getString("gui.sounds.error", "ENTITY_VILLAGER_NO");
+
+        // Commands
+        this.enableTopLevelSell = config.getBoolean("commands.enable-top-level-sell", false);
     }
 
     public void reload() {
@@ -99,5 +103,9 @@ public class PluginConfig {
             case "error" -> soundError;
             default -> null;
         };
+    }
+
+    public boolean isTopLevelSellEnabled() {
+        return enableTopLevelSell;
     }
 }

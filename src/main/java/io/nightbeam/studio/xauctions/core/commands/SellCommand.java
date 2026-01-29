@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
 public class SellCommand implements CommandExecutor {
@@ -111,23 +112,15 @@ public class SellCommand implements CommandExecutor {
         // This is generally acceptable behavior for /ah sell.
 
         plugin.getAuctionService().createAuction(request)
-                .thenAccept(result -> {
+                .thenAccept(result -> Bukkit.getScheduler().runTask(plugin, () -> {
                     if (result.isSuccess()) {
-                        // Success message is handled by service or we can send it here
-                        // plugin.getMessageManager().send(player, "auction-created", ...);
-                        // For now, service logs it, we can just confirm to user if needed,
-                        // but the service might have already sent a message or fired an event.
-                        // The legacy AuctionManager sent messages directly.
-                        // Implementation of AuctionServiceImpl currently only logs to console.
-                        // Let's send a basic message here for now, or TODO: Move message logic to
-                        // service or event listener.
                         player.sendMessage("§aAuction created successfully!");
                     } else {
                         player.sendMessage("§cFailed to create auction: " + result.getError());
                     }
-                })
+                }))
                 .exceptionally(ex -> {
-                    player.sendMessage("§cAn error occurred: " + ex.getMessage());
+                    Bukkit.getScheduler().runTask(plugin, () -> player.sendMessage("§cAn error occurred: " + ex.getMessage()));
                     return null;
                 });
 

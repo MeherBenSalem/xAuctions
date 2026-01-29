@@ -88,22 +88,36 @@ public class AuctionServiceImpl implements AuctionService {
                 .deleted(false)
                 .build();
 
-        // Fire Event
-        AuctionCreateEvent event = new AuctionCreateEvent(auction, seller);
-        Bukkit.getPluginManager().callEvent(event);
-        if (event.isCancelled()) {
-            return CompletableFuture.completedFuture(Result.error("Cancelled by plugin"));
-        }
+        // Fire event and modify inventory on the main thread
+        CompletableFuture<Auction> mainThread = new CompletableFuture<>();
+        Bukkit.getScheduler().runTask(plugin, () -> {
+            try {
+                AuctionCreateEvent event = new AuctionCreateEvent(auction, seller);
+                Bukkit.getPluginManager().callEvent(event);
+                if (event.isCancelled()) {
+                    mainThread.complete(null);
+                    return;
+                }
 
-        // Remove item from inventory
-        seller.getInventory().removeItem(request.item());
+                // Remove item from inventory on main thread
+                seller.getInventory().removeItem(request.item());
+                mainThread.complete(auction);
+            } catch (Throwable t) {
+                mainThread.completeExceptionally(t);
+            }
+        });
 
-        // Save
-        return plugin.getStorageProvider().saveAuction(auction).thenApply(v -> {
-            Log.info("Auction created: " + auction.getAuctionId());
-            activeCount.incrementAndGet();
-            return Result.success(auction);
-        }).exceptionally(ex -> Result.error("Storage error: " + ex.getMessage()));
+        // After main-thread actions complete, save the auction asynchronously
+        return mainThread.thenCompose(a -> {
+            if (a == null) {
+                return CompletableFuture.completedFuture(Result.error("Cancelled by plugin"));
+            }
+            return plugin.getStorageProvider().saveAuction(a).thenApply(v -> {
+                Log.info("Auction created: " + auction.getAuctionId());
+                activeCount.incrementAndGet();
+                return Result.success(auction);
+            }).exceptionally(ex -> Result.error("Storage error: " + ex.getMessage()));
+        });
     }
 
     @Override
@@ -114,6 +128,11 @@ public class AuctionServiceImpl implements AuctionService {
 
         if (auction.isSold() || auction.isExpired()) {
             return CompletableFuture.completedFuture(Result.error("Auction not available"));
+        }
+
+        // Prevent buying your own auction
+        if (auction.getSellerUuid().equals(buyer.getUniqueId())) {
+            return CompletableFuture.completedFuture(Result.error("You cannot buy your own auction"));
         }
 
         EconomyProvider eco = plugin.getEconomyManager().getProvider(auction.getCurrency());
@@ -163,13 +182,32 @@ public class AuctionServiceImpl implements AuctionService {
                         if (sellerEco == null)
                             sellerEco = plugin.getEconomyManager().getDefaultProvider();
 
-                        sellerEco.deposit(seller, finalAmount);
-                        auction.setCollected(true);
+                        // Deposit and notify seller on the main thread
+                        final CompletableFuture<Void> ui = new CompletableFuture<>();
+                        final Player finalSeller = seller;
+                        final Player finalBuyer = buyer;
+                        final EconomyProvider sellerEcoFinal = sellerEco;
+                        Bukkit.getScheduler().runTask(plugin, () -> {
+                            try {
+                                if (sellerEcoFinal != null) {
+                                    sellerEcoFinal.deposit(finalSeller, finalAmount);
+                                    auction.setCollected(true);
+                                    finalSeller.sendMessage(
+                                            "§aItem sold to " + finalBuyer.getName() + " for " + sellerEcoFinal.format(finalAmount));
+                                    if (tax > 0) {
+                                        finalSeller.sendMessage("§7(Tax paid: " + sellerEcoFinal.format(tax) + ")");
+                                    }
+                                }
+                                ui.complete(null);
+                            } catch (Throwable t) {
+                                ui.completeExceptionally(t);
+                            }
+                        });
 
-                        seller.sendMessage(
-                                "§aItem sold to " + buyer.getName() + " for " + sellerEco.format(finalAmount));
-                        if (tax > 0) {
-                            seller.sendMessage("§7(Tax paid: " + sellerEco.format(tax) + ")");
+                        // wait for seller UI work before continuing to give item
+                        try {
+                            ui.join();
+                        } catch (Exception ignored) {
                         }
                     } else {
                         // Notify seller if online but auto-claim disabled, or just let them check /ah
@@ -178,25 +216,37 @@ public class AuctionServiceImpl implements AuctionService {
                             // Config says broadcast-sale. Usually global.
                             // But we should notify seller personally if online.
                             if (seller != null && seller.isOnline()) {
-                                seller.sendMessage("§aYour item was sold to " + buyer.getName() + " for "
-                                        + finalEco.format(auction.getPrice()));
-                                seller.sendMessage("§7Type /ah to collect your earnings.");
+                                Bukkit.getScheduler().runTask(plugin, () -> {
+                                    seller.sendMessage("§aYour item was sold to " + buyer.getName() + " for "
+                                            + finalEco.format(auction.getPrice()));
+                                    seller.sendMessage("§7Type /ah to collect your earnings.");
+                                });
                             }
                         }
                     }
 
-                    // Give item to buyer
-                    java.util.HashMap<Integer, org.bukkit.inventory.ItemStack> leftover = buyer.getInventory()
-                            .addItem(auction.getItemStack());
-                    if (!leftover.isEmpty()) {
-                        for (org.bukkit.inventory.ItemStack drop : leftover.values()) {
-                            buyer.getWorld().dropItem(buyer.getLocation(), drop);
+                    // Give item to buyer (safely on main thread)
+                    CompletableFuture<Void> giveFuture = new CompletableFuture<>();
+                    Bukkit.getScheduler().runTask(plugin, () -> {
+                        try {
+                            java.util.HashMap<Integer, org.bukkit.inventory.ItemStack> leftover = buyer.getInventory()
+                                    .addItem(auction.getItemStack());
+                            if (!leftover.isEmpty()) {
+                                for (org.bukkit.inventory.ItemStack drop : leftover.values()) {
+                                    buyer.getWorld().dropItem(buyer.getLocation(), drop);
+                                }
+                                buyer.sendMessage("§eInventory full, item dropped on ground!");
+                            }
+                            giveFuture.complete(null);
+                        } catch (Throwable t) {
+                            giveFuture.completeExceptionally(t);
                         }
-                        buyer.sendMessage("§eInventory full, item dropped on ground!");
-                    }
+                    });
 
-                    // Update DB with collected status if changed
-                    return plugin.getStorageProvider().updateAuction(auction).thenApply(v -> Result.success());
+                        // Update DB after giving items
+                        return giveFuture.thenCompose(v -> plugin.getStorageProvider().updateAuction(auction)
+                            .thenApply(v2 -> Result.<Void>success()).exceptionally(ex ->
+                                Result.<Void>error("Storage error: " + ex.getMessage())));
                 });
     }
 
@@ -207,10 +257,10 @@ public class AuctionServiceImpl implements AuctionService {
         }
 
         auction.setExpireTime(0L); // Expire it
-        return plugin.getStorageProvider().updateAuction(auction)
+                return plugin.getStorageProvider().updateAuction(auction)
                 .thenApply(v -> {
                     activeCount.decrementAndGet();
-                    return Result.success();
+                    return Result.<Void>success();
                 });
     }
 
@@ -232,15 +282,34 @@ public class AuctionServiceImpl implements AuctionService {
             double tax = plugin.getTaxManager().calculateTax(auction.getPrice(), auction.getItemStack());
             double finalAmount = auction.getPrice() - tax;
 
-            eco.deposit(player, finalAmount);
+            // Perform deposit and player notification on main thread, then update DB
+            final CompletableFuture<Void> ui = new CompletableFuture<>();
+            final Player finalSeller = Bukkit.getPlayer(auction.getSellerUuid());
+            final Player finalBuyer = player;
+            final EconomyProvider sellerEcoFinal = plugin.getEconomyManager().getProvider(auction.getCurrency());
+            Bukkit.getScheduler().runTask(plugin, () -> {
+                try {
+                    if (sellerEcoFinal != null) {
+                        sellerEcoFinal.deposit(finalSeller, finalAmount);
+                        auction.setCollected(true);
+                        finalSeller.sendMessage(
+                                "§aItem sold to " + finalBuyer.getName() + " for " + sellerEcoFinal.format(finalAmount));
+                        if (tax > 0) {
+                            finalSeller.sendMessage("§7(Tax paid: " + sellerEcoFinal.format(tax) + ")");
+                        }
+                    }
+                    ui.complete(null);
+                } catch (Throwable t) {
+                    ui.completeExceptionally(t);
+                }
+            });
 
             auction.setCollected(true);
-            final EconomyProvider finalEco = eco;
-            return plugin.getStorageProvider().updateAuction(auction).thenApply(v -> {
-                player.sendMessage(
-                        "§aCollected " + finalEco.format(finalAmount) + " (Tax: " + finalEco.format(tax) + ")");
-                return Result.success();
-            });
+            return ui.thenCompose(v -> plugin.getStorageProvider().updateAuction(auction).thenApply(v2 -> {
+                Bukkit.getScheduler().runTask(plugin, () -> player.sendMessage(
+                        "§aCollected " + sellerEcoFinal.format(finalAmount) + " (Tax: " + sellerEcoFinal.format(tax) + ")"));
+                return Result.<Void>success();
+            }).exceptionally(ex -> Result.<Void>error("Storage error: " + ex.getMessage())));
         } else {
             // Return Item (Expired/Cancelled/Deleted)
             if (player.getInventory().firstEmpty() == -1) {

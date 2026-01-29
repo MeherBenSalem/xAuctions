@@ -14,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu;
+
 public class AuctionsMenu extends PaginatedMenu<Auction> {
 
     private final String searchQuery;
@@ -127,18 +129,44 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
 
     @Override
     public void loopCode(Auction auction, int slot) {
-        ItemStack item = ItemBuilder.from(auction.getItemStack().clone())
+        // Build item and add preview hint for shulker boxes
+        ItemStack base = auction.getItemStack().clone();
+        ItemBuilder builder = ItemBuilder.from(base)
                 .lore(
                         " ",
                         "§bSELLER: §f" + auction.getSellerName(),
                         "§bPRICE: §f" + plugin.getEconomyManager().getDefaultProvider().format(auction.getPrice()),
                         "§bEXPIRE: §f" + formatTime(auction.getExpireTime() - System.currentTimeMillis()),
                         " ",
-                        "§b▶ CLICK TO BUY THIS ITEM")
-                .build();
+                        "§b▶ CLICK TO BUY THIS ITEM");
+
+        boolean isShulker = base.getType().toString().contains("SHULKER");
+        if (isShulker) {
+            builder.addLore("§7(Right-click to preview contents)");
+        }
+
+        ItemStack item = builder.build();
 
         setItem(slot, new MenuItem(item, event -> {
             Player p = (Player) event.getWhoClicked();
+
+            // Right-click to preview shulker box contents if applicable
+            if (event.isRightClick() && isShulker) {
+                try {
+                    plugin.getGuiManager().openMenu(p, new ShulkerPreviewMenu(plugin, auction.getItemStack(), this));
+                    return;
+                } catch (Exception e) {
+                    // If preview fails, fall back to standard behavior
+                }
+            }
+
+            // Prevent buying your own auction (only for purchase attempts)
+            if (auction.getSellerUuid().equals(p.getUniqueId())) {
+                p.sendMessage("§cYou cannot buy your own auction.");
+                return;
+            }
+
+            // Left-click (or other clicks) proceed to purchase confirmation
             plugin.getGuiManager().openMenu(p, new ConfirmationMenu(plugin, "Confirm Purchase",
                     "Buy " + item.getType().name() + " for " + auction.getPrice() + "?",
                     confirmPlayer -> {
