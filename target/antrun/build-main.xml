@@ -4,7 +4,7 @@
     <taskdef classname="com.yworks.yguard.YGuardTask" name="yguard" classpathref="maven.plugin.classpath" />
     <echo>=== Running yGuard Obfuscation ===</echo>
     <yguard>
-      <inoutpair in="target/xAuctions-1.0.0.jar" out="target/xAuctions-1.0.0-obf.jar" />
+      <inoutpair in="target/xAuctions-1.1.0.jar" out="target/xAuctions-1.1.0-obf.jar" />
       <rename logfile="target/yguard-rename.log" replaceClassNameStrings="true">
         <property name="naming-scheme" value="best" />
         <property name="language-conformity" value="compatible" />
@@ -40,6 +40,6 @@
         </keep>
       </rename>
     </yguard>
-    <echo>=== Obfuscation Complete: target/xAuctions-1.0.0-obf.jar ===</echo>
+    <echo>=== Obfuscation Complete: target/xAuctions-1.1.0-obf.jar ===</echo>
   </target>
 </project>

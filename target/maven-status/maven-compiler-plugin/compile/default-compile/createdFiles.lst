@@ -3,6 +3,7 @@ io\nightbeam\studio\xauctions\api\storage\StorageProvider.class
 io\nightbeam\studio\xauctions\gui\framework\MenuAction.class
 io\nightbeam\studio\xauctions\XAuctionsPlugin.class
 io\nightbeam\studio\xauctions\addons\DiscordWebhook.class
+io\nightbeam\studio\xauctions\utils\PlatformAdapter.class
 io\nightbeam\studio\xauctions\api\service\EconomyService.class
 io\nightbeam\studio\xauctions\core\managers\ListingLimitManager.class
 io\nightbeam\studio\xauctions\utils\ItemStackGsonAdapter.class

@@ -8,7 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
 public class SellCommand implements CommandExecutor {
@@ -112,7 +111,7 @@ public class SellCommand implements CommandExecutor {
         // This is generally acceptable behavior for /ah sell.
 
         plugin.getAuctionService().createAuction(request)
-                .thenAccept(result -> Bukkit.getScheduler().runTask(plugin, () -> {
+                .thenAccept(result -> plugin.getPlatformAdapter().runEntityTask(player, () -> {
                     if (result.isSuccess()) {
                         player.sendMessage("§aAuction created successfully!");
                     } else {
@@ -120,7 +119,8 @@ public class SellCommand implements CommandExecutor {
                     }
                 }))
                 .exceptionally(ex -> {
-                    Bukkit.getScheduler().runTask(plugin, () -> player.sendMessage("§cAn error occurred: " + ex.getMessage()));
+                    plugin.getPlatformAdapter().runEntityTask(player,
+                            () -> player.sendMessage("§cAn error occurred: " + ex.getMessage()));
                     return null;
                 });
 

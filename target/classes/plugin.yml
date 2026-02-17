@@ -1,10 +1,11 @@
 name: xAuctions
-version: '1.0.0'
+version: '1.1.0'
 main: io.nightbeam.studio.xauctions.XAuctionsPlugin
 api-version: '1.20'
-authors: [Nightbeam Studio]
+folia-supported: true
+authors: [NAIZO]
 description: Premium Auction House Plugin
-website: https://nightbeam.io
+website: https://www.nightbeam.cloud
 
 # Soft dependencies (optional integrations)
 softdepend:

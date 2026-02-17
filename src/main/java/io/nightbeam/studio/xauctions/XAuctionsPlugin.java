@@ -19,6 +19,7 @@ import io.nightbeam.studio.xauctions.api.service.AuctionService;
 import io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl;
 import io.nightbeam.studio.xauctions.core.managers.TaxManager;
 import io.nightbeam.studio.xauctions.core.managers.ListingLimitManager;
+import io.nightbeam.studio.xauctions.utils.PlatformAdapter;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -60,6 +61,7 @@ public class XAuctionsPlugin extends JavaPlugin {
     private io.nightbeam.studio.xauctions.core.managers.ListingLimitManager listingLimitManager;
     private io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager itemBlacklistManager;
     private io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager playerBlacklistManager;
+    private PlatformAdapter platformAdapter;
 
     // Configuration
     private PluginConfig pluginConfig;
@@ -73,6 +75,7 @@ public class XAuctionsPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        platformAdapter = new PlatformAdapter(this);
         long startTime = System.currentTimeMillis();
 
         // Colored ASCII-art startup banner (uses ChatColor constants, not '&' codes)
@@ -143,7 +146,7 @@ public class XAuctionsPlugin extends JavaPlugin {
      * Asynchronously checks the remote version and logs if an update is available.
      */
     private void checkForUpdates() {
-        Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+        platformAdapter.runAsync(() -> {
             try {
                 String remote = fetchRemoteVersion();
                 if (remote == null || remote.isBlank())
@@ -486,5 +489,9 @@ public class XAuctionsPlugin extends JavaPlugin {
 
     public io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager getPlayerBlacklistManager() {
         return playerBlacklistManager;
+    }
+
+    public PlatformAdapter getPlatformAdapter() {
+        return platformAdapter;
     }
 }
