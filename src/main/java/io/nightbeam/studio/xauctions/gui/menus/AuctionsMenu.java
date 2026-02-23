@@ -2,7 +2,9 @@ package io.nightbeam.studio.xauctions.gui.menus;
 
 import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.api.model.Auction;
+import io.nightbeam.studio.xauctions.core.managers.PlayerPreferences;
 import io.nightbeam.studio.xauctions.gui.framework.AuctionFilter;
+import io.nightbeam.studio.xauctions.gui.framework.AuctionSortOrder;
 import io.nightbeam.studio.xauctions.gui.framework.MenuItem;
 import io.nightbeam.studio.xauctions.gui.framework.PaginatedMenu;
 import io.nightbeam.studio.xauctions.utils.ItemBuilder;
@@ -11,7 +13,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import io.nightbeam.studio.xauctions.gui.menus.ShulkerPreviewMenu;
@@ -20,21 +24,39 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
 
     private final String searchQuery;
     private AuctionFilter currentFilter;
+    private AuctionSortOrder currentSort;
     private List<Auction> cachedAuctions;
+    /** UUID of the player who opened this menu, set in onOpen. */
+    private UUID viewerUuid;
 
     public AuctionsMenu(XAuctionsPlugin plugin) {
-        this(plugin, null, AuctionFilter.ALL);
+        this(plugin, null, AuctionFilter.ALL, AuctionSortOrder.NEWEST);
     }
 
     public AuctionsMenu(XAuctionsPlugin plugin, String searchQuery) {
-        this(plugin, searchQuery, AuctionFilter.ALL);
+        this(plugin, searchQuery, AuctionFilter.ALL, AuctionSortOrder.NEWEST);
     }
 
     public AuctionsMenu(XAuctionsPlugin plugin, String searchQuery, AuctionFilter filter) {
+        this(plugin, searchQuery, filter, AuctionSortOrder.NEWEST);
+    }
+
+    public AuctionsMenu(XAuctionsPlugin plugin, String searchQuery, AuctionFilter filter, AuctionSortOrder sort) {
         super(plugin, "AUCTION SITE", 54);
         this.searchQuery = searchQuery;
         this.currentFilter = filter;
+        this.currentSort = sort;
         this.maxItemsPerPage = 45; // 5 rows
+    }
+
+    @Override
+    public void onOpen(Player player) {
+        this.viewerUuid = player.getUniqueId();
+        // Load persisted filter + sort from the player's preferences
+        PlayerPreferences prefs = plugin.getPlayerPreferencesManager().getOrCreate(viewerUuid);
+        this.currentFilter = prefs.getFilter();
+        this.currentSort = prefs.getSortOrder();
+        update();
     }
 
     @Override
@@ -104,7 +126,19 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
                     }
                     return true;
                 })
+                .sorted(buildComparator())
                 .collect(Collectors.toList());
+    }
+
+    /** Builds the {@link Comparator} that corresponds to {@link #currentSort}. */
+    private Comparator<Auction> buildComparator() {
+        return switch (currentSort) {
+            case PRICE_ASC     -> Comparator.comparingDouble(Auction::getPrice);
+            case PRICE_DESC    -> Comparator.comparingDouble(Auction::getPrice).reversed();
+            case OLDEST        -> Comparator.comparingLong(Auction::getStartTime);
+            case EXPIRING_SOON -> Comparator.comparingLong(Auction::getExpireTime);
+            default            -> Comparator.comparingLong(Auction::getStartTime).reversed(); // NEWEST
+        };
     }
 
     private boolean matchFilter(ItemStack item, AuctionFilter filter) {
@@ -205,20 +239,36 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
             plugin.getGuiManager().openMenu((Player) e.getWhoClicked(), new MainMenu(plugin));
         }));
 
+        // 47: Cycle Sort
+        ItemStack sortItem = ItemBuilder.from(currentSort.getIcon())
+                .name("§6Sort: §f" + currentSort.getDisplayName())
+                .lore("§7Click to cycle sort orders", "§eCurrent: §f" + currentSort.getDisplayName())
+                .glow(true)
+                .build();
+
+        setItem(47, new MenuItem(sortItem, e -> {
+            AuctionSortOrder[] sorts = AuctionSortOrder.values();
+            int nextOrdinal = (currentSort.ordinal() + 1) % sorts.length;
+            this.currentSort = sorts[nextOrdinal];
+            this.page = 0;
+            savePreferences();
+            update();
+        }));
+
         // 49: Cycle Filter
         ItemStack filterItem = ItemBuilder.from(currentFilter.getIcon())
-                .name("§aFilter: " + currentFilter.getDisplayName())
-                .lore("§7Click to cycle filters", "§eCurrently showing: " + currentFilter.getDisplayName())
+                .name("§aFilter: §f" + currentFilter.getDisplayName())
+                .lore("§7Click to cycle filters", "§eCurrent: §f" + currentFilter.getDisplayName())
                 .glow(true)
                 .build();
 
         setItem(49, new MenuItem(filterItem, e -> {
-            // Cycle logic
             AuctionFilter[] filters = AuctionFilter.values();
             int nextOrdinal = (currentFilter.ordinal() + 1) % filters.length;
             this.currentFilter = filters[nextOrdinal];
             this.page = 0;
-            update(); // Refresh
+            savePreferences();
+            update();
         }));
 
         // 53: Next Page (Always Arrow)
@@ -248,7 +298,18 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
         return sb.toString();
     }
 
+    /** Persists the current filter and sort order to the player's preferences. */
+    private void savePreferences() {
+        if (viewerUuid == null) return;
+        PlayerPreferences prefs = plugin.getPlayerPreferencesManager().getOrCreate(viewerUuid);
+        prefs.setFilter(currentFilter);
+        prefs.setSortOrder(currentSort);
+    }
+
     @Override
     public void onClose(Player player) {
+        // Ensure preferences are persisted even if the player closes the menu
+        // without clicking filter/sort (e.g. pressing Escape)
+        savePreferences();
     }
 }

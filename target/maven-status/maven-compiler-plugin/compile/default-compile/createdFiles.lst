@@ -5,6 +5,7 @@ io\nightbeam\studio\xauctions\XAuctionsPlugin.class
 io\nightbeam\studio\xauctions\addons\DiscordWebhook.class
 io\nightbeam\studio\xauctions\utils\PlatformAdapter.class
 io\nightbeam\studio\xauctions\api\service\EconomyService.class
+io\nightbeam\studio\xauctions\gui\framework\AuctionSortOrder.class
 io\nightbeam\studio\xauctions\core\managers\ListingLimitManager.class
 io\nightbeam\studio\xauctions\utils\ItemStackGsonAdapter.class
 io\nightbeam\studio\xauctions\api\model\Result.class
@@ -30,6 +31,7 @@ io\nightbeam\studio\xauctions\config\menu\LayoutLoader.class
 io\nightbeam\studio\xauctions\redis\RedisManager$1.class
 io\nightbeam\studio\xauctions\gui\menus\CategoryMenu.class
 io\nightbeam\studio\xauctions\gui\framework\MenuItem.class
+io\nightbeam\studio\xauctions\core\managers\PlayerPreferences.class
 io\nightbeam\studio\xauctions\gui\framework\PaginatedMenu.class
 io\nightbeam\studio\xauctions\gui\menus\ConfirmationMenu.class
 io\nightbeam\studio\xauctions\storage\json\JsonStorageProvider.class
@@ -61,6 +63,7 @@ io\nightbeam\studio\xauctions\core\listeners\PlayerConnectionListener.class
 io\nightbeam\studio\xauctions\core\managers\NetworkSyncManager.class
 io\nightbeam\studio\xauctions\gui\AbstractMenu.class
 io\nightbeam\studio\xauctions\economy\impl\LevelEconomyProvider.class
+io\nightbeam\studio\xauctions\core\managers\PlayerPreferencesManager.class
 io\nightbeam\studio\xauctions\economy\impl\PlayerPointsProvider.class
 io\nightbeam\studio\xauctions\gui\menus\MainMenu.class
 io\nightbeam\studio\xauctions\api\event\AuctionBuyEvent.class

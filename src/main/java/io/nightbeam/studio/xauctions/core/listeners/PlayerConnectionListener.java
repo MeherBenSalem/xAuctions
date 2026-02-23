@@ -94,12 +94,14 @@ public class PlayerConnectionListener implements Listener {
 
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
-        // Clear cache if needed
-        // plugin.getStorageProvider().unloadPlayer(event.getPlayer().getUniqueId());
+        Player player = event.getPlayer();
+
+        // Evict player preferences from cache to prevent unbounded memory growth
+        plugin.getPlayerPreferencesManager().evict(player.getUniqueId());
 
         // Unlock anti-dupe just in case
         if (plugin.getAntiDupeManager() != null) {
-            plugin.getAntiDupeManager().unlockPlayer(event.getPlayer());
+            plugin.getAntiDupeManager().unlockPlayer(player);
         }
     }
 }

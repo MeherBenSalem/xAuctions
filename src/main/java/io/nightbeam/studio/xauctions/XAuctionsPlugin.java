@@ -61,6 +61,7 @@ public class XAuctionsPlugin extends JavaPlugin {
     private io.nightbeam.studio.xauctions.core.managers.ListingLimitManager listingLimitManager;
     private io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager itemBlacklistManager;
     private io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager playerBlacklistManager;
+    private io.nightbeam.studio.xauctions.core.managers.PlayerPreferencesManager playerPreferencesManager;
     private PlatformAdapter platformAdapter;
 
     // Configuration
@@ -78,66 +79,99 @@ public class XAuctionsPlugin extends JavaPlugin {
         platformAdapter = new PlatformAdapter(this);
         long startTime = System.currentTimeMillis();
 
-        // Colored ASCII-art startup banner (uses ChatColor constants, not '&' codes)
-        String ver = fetchRemoteVersion();
-        String server = getServer().getVersion();
+        logStartupBanner();
 
-        // Normalize version display (ensure single leading 'v')
-        String displayVer = (ver != null && ver.startsWith("v")) ? ver : "v" + ver;
-
-        // Try to load ASCII banner from resource to avoid escape issues.
-        try (var is = getResource("banner.txt")) {
-            if (is != null) {
-                var br = new java.io.BufferedReader(
-                        new java.io.InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8));
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String colored = ChatColor.AQUA + line;
-                    Bukkit.getConsoleSender().sendMessage(colored); // Log to console
-                }
-                // Single plain log entry summarizing banner (avoids per-line duplication in
-                // server logs)
-                getLogger().info("Premium Auction House " + displayVer + " - Running on " + server);
-            } else {
-                // fallback: simple single-line banner
-                String colored = ChatColor.AQUA + "=== xAuctions ===";
-                Bukkit.getConsoleSender().sendMessage(colored);
-                getLogger().info("Premium Auction House " + displayVer + " - Running on " + server);
-            }
-        } catch (Exception e) {
-            // if resource read fails, fallback gracefully
-            String colored = ChatColor.AQUA + "=== xAuctions ===";
-            Bukkit.getConsoleSender().sendMessage(colored);
-            getLogger().info("xAuctions startup banner displayed (console-only). Version: " + displayVer);
-        }
+        int step = 1;
+        final int totalSteps = 15;
 
         try {
-            // Load configuration
+            // Step 1 — Configuration
             loadConfiguration();
+            consoleStep(step++, totalSteps, "Configuration loaded");
 
-            // Setup optional Vault economy (safe, non-throwing)
+            // Step 2 — Economy provider
             setupEconomy();
+            economyManager = new EconomyManager(this);
+            economyManager.init();
+            String econDesc = vaultEnabled ? "Vault (" + vaultEconomy.getName() + ")" : "no economy provider hooked";
+            consoleStep(step++, totalSteps, "Economy provider resolved (" + econDesc + ")");
 
-            // Initialize managers in proper order
-            initializeManagers();
+            // Environment info (server version, Java, integrations)
+            logRuntimeInfo();
 
-            // Register commands
+            // Step 3 — Message Manager
+            messageManager = new MessageManager(this);
+            consoleStep(step++, totalSteps, "Message manager initialized");
+
+            // Step 4 — Storage provider
+            initializeStorage();
+            consoleStep(step++, totalSteps, "Storage initialized (" + pluginConfig.getStorageType().toUpperCase() + ")");
+
+            // Step 5 — GUI Manager
+            guiManager = new GuiManager(this);
+            consoleStep(step++, totalSteps, "GUI system initialized");
+
+            // Step 6 — Auction Manager + Service
+            auctionManager = new AuctionManager(this);
+            auctionService = new AuctionServiceImpl(this);
+            consoleStep(step++, totalSteps, "Auction engine initialized");
+
+            // Step 7 — Anti-Dupe Manager
+            antiDupeManager = new AntiDupeManager(this);
+            consoleStep(step++, totalSteps, "Anti-dupe protection active");
+
+            // Step 8 — Input Listener
+            inputListener = new InputListener(this);
+            consoleStep(step++, totalSteps, "Chat input listener ready");
+
+            // Step 9 — Tax Manager
+            taxManager = new TaxManager(this);
+            taxManager.init();
+            consoleStep(step++, totalSteps, "Tax system initialized");
+
+            // Step 10 — Listing Limit Manager
+            listingLimitManager = new ListingLimitManager(this);
+            consoleStep(step++, totalSteps, "Listing limit manager initialized");
+
+            // Step 11 — Item Blacklist
+            itemBlacklistManager = new io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager(this);
+            itemBlacklistManager.init();
+            consoleStep(step++, totalSteps, "Item blacklist loaded");
+
+            // Step 12 — Player Blacklist
+            playerBlacklistManager = new io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager(this);
+            playerBlacklistManager.init();
+            consoleStep(step++, totalSteps, "Player blacklist loaded");
+
+            // Step 13 — Player Preferences
+            playerPreferencesManager = new io.nightbeam.studio.xauctions.core.managers.PlayerPreferencesManager();
+            consoleStep(step++, totalSteps, "Player preferences manager initialized");
+
+            // Step 14 — Commands
             registerCommands();
+            consoleStep(step++, totalSteps, "Commands registered");
 
-            // Register listeners
+            // Step 15 — Listeners
             registerListeners();
+            consoleStep(step++, totalSteps, "Event listeners registered");
 
-            // Load integrations
+            // Optional integrations (PlaceholderAPI, Discord)
             loadIntegrations();
 
-            // Check for updates asynchronously (safe, non-blocking)
+            // Async version check (non-blocking)
             checkForUpdates();
 
             long loadTime = System.currentTimeMillis() - startTime;
-            getLogger().info("xAuctions loaded successfully in " + loadTime + "ms!");
+            consoleSend("§2§l╠═════════════════════════════════════════════════════════════╣");
+            consoleSend("§2§l║  §a§l✔ §r§fxAuctions §av" + getDescription().getVersion() + " §floaded in §b" + loadTime + "ms");
+            consoleSend("§2§l║  §7  Powered by NightBeam Studio §8— §7premium quality guaranteed");
+            consoleSend("§2§l╚═════════════════════════════════════════════════════════════╝");
 
         } catch (Exception e) {
-            getLogger().log(Level.SEVERE, "Failed to initialize xAuctions!", e);
+            consoleSend("§4§l╠═════════════════════════════════════════════════════════════╣");
+            consoleSend("§4§l║  §c§l✘ §fFailed to initialize xAuctions! Plugin has been disabled.");
+            consoleSend("§4§l╚═════════════════════════════════════════════════════════════╝");
+            getLogger().log(Level.SEVERE, "Initialization error:", e);
             getServer().getPluginManager().disablePlugin(this);
         }
     }
@@ -154,31 +188,34 @@ public class XAuctionsPlugin extends JavaPlugin {
                 String remoteClean = remote.startsWith("v") ? remote.substring(1) : remote;
                 String local = getDescription().getVersion();
                 if (!remoteClean.equals(local)) {
-                    String msg = "A new xAuctions version is available: " + remote + " (installed: v" + local + ").";
-                    getLogger().info(msg);
-                    // also print a colored console message for visibility
-                    Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[xAuctions] " + msg);
+                    consoleSend("§e§l[xAuctions] §eUpdate available: §f" + remote + " §8(§cyou have v" + local + "§8)");
+                    consoleSend("§8  → §7https://builtbybit.com/resources/xauctions-advanced-auctions-house.91840/");
                 } else {
-                    String msg = "xAuctions is up to date (v" + local + ").";
-                    getLogger().info(msg);
+                    consoleSend("§8[xAuctions] §aRunning latest version (v" + local + "). §7✔");
                 }
             } catch (Throwable t) {
-                // ignore failures silently
+                // ignore silently
             }
         });
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("xAuctions is shutting down...");
+        consoleSend("§4§l╔═════════════════════════════════════════════════════════════╗");
+        consoleSend("§4§l║  §cShutting down §fxAuctions §8— §7thank you for using NightBeam Studio  §4§l║");
+        consoleSend("§4§l╠═════════════════════════════════════════════════════════════╣");
 
-        // Save data
-        if (storageProvider != null) {
-            storageProvider.shutdown();
-            getLogger().info("Storage provider shut down successfully.");
+        try {
+            if (storageProvider != null) {
+                storageProvider.shutdown();
+                consoleSend("  §8[--] §a✔ §fStorage connections closed");
+            }
+        } catch (Exception e) {
+            consoleSend("  §8[--] §c✘ §fStorage shutdown error: " + e.getMessage());
+            getLogger().severe("Error during shutdown: " + e.getMessage());
         }
 
-        getLogger().info("xAuctions disabled. Goodbye!");
+        consoleSend("§4§l╚══════════════════════════ §cxAuctions disabled §4§l══════════════╝");
     }
 
     /**
@@ -257,57 +294,47 @@ public class XAuctionsPlugin extends JavaPlugin {
     }
 
     /**
-     * Initializes all managers in the correct dependency order.
+     * Premium console startup banner.
      */
-    private void initializeManagers() {
-        // 1. Message Manager (no dependencies)
-        messageManager = new MessageManager(this);
-        debug("MessageManager initialized.");
+    private void logStartupBanner() {
+        consoleSend("");
+        consoleSend("§6  __  __    _             _   _                 ");
+        consoleSend("§6  \\ \\/ /   / \\  _   _  ___| |_(_) ___  _ __  ___ ");
+        consoleSend("§6   \\  /   / _ \\| | | |/ __| __| |/ _ \\| '_ \\/ __|");
+        consoleSend("§6   /  \\  / ___ \\ |_| | (__| |_| | (_) | | | \\__ \\");
+        consoleSend("§6  /_/\\_\\/_/   \\_\\__,_|\\___|\\__|_|\\___/|_| |_|___/");
+        consoleSend("§e         Premium Auction House  §8|  §fv" + getDescription().getVersion() + "  §8|  §7NightBeam Studio");
+        consoleSend("");
+        consoleSend("§2§l╔═════════════════════════════════════════════════════════════╗");
+        consoleSend("§2§l║            §a§l  xAuctions §2§l— Initializing...                 ║");
+        consoleSend("§2§l╠═════════════════════════════════════════════════════════════╣");
+    }
 
-        // 2. Economy Manager (no dependencies)
-        economyManager = new EconomyManager(this);
-        economyManager.init();
-        debug("EconomyManager initialized.");
+    /**
+     * Prints environment info (server version, Java, active integrations) to console.
+     */
+    private void logRuntimeInfo() {
+        String serverVer = Bukkit.getBukkitVersion();
+        String javaVer   = System.getProperty("java.version");
+        boolean hasPAPI  = Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
+        boolean hasVault = Bukkit.getPluginManager().getPlugin("Vault") != null;
+        String storage   = pluginConfig.getStorageType().toUpperCase();
+        consoleSend("§8  Platform : §fMC " + serverVer + "   §8Java: §f" + javaVer);
+        consoleSend("§8  Hooks    : §fVault=" + hasVault + "  PlaceholderAPI=" + hasPAPI + "  Storage=" + storage);
+    }
 
-        // 3. Storage Provider (depends on config)
-        initializeStorage();
-        debug("StorageProvider initialized.");
+    /**
+     * Sends a raw console message (supports § color codes).
+     */
+    private void consoleSend(String message) {
+        Bukkit.getConsoleSender().sendMessage(message);
+    }
 
-        // 4. GUI Manager (no dependencies)
-        guiManager = new GuiManager(this);
-        debug("GuiManager initialized.");
-
-        // 5. Auction Manager (depends on storage, economy)
-        auctionManager = new AuctionManager(this);
-        auctionService = new AuctionServiceImpl(this);
-        debug("AuctionManager initialized.");
-
-        // 6. Anti-Dupe Manager (no dependencies)
-        antiDupeManager = new AntiDupeManager(this);
-        debug("AntiDupeManager initialized.");
-
-        // 7. Input Listener (no dependencies)
-        inputListener = new InputListener(this);
-        debug("InputListener initialized.");
-
-        // 8. Tax Manager
-        taxManager = new TaxManager(this);
-        taxManager.init();
-        debug("TaxManager initialized.");
-
-        // 9. Listing Limit Manager
-        listingLimitManager = new ListingLimitManager(this);
-        debug("ListingLimitManager initialized.");
-
-        // 10. Item Blacklist Manager
-        itemBlacklistManager = new io.nightbeam.studio.xauctions.core.managers.ItemBlacklistManager(this);
-        itemBlacklistManager.init();
-        debug("ItemBlacklistManager initialized.");
-
-        // 11. Player Blacklist Manager
-        playerBlacklistManager = new io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager(this);
-        playerBlacklistManager.init();
-        debug("PlayerBlacklistManager initialized.");
+    /**
+     * Sends a formatted step line: {@code  [X/Y] ✔ Description}.
+     */
+    private void consoleStep(int step, int total, String description) {
+        consoleSend(String.format("  §8[§f%2d§8/§f%2d§8] §a✔ §f%s", step, total, description));
     }
 
     /**
@@ -373,21 +400,24 @@ public class XAuctionsPlugin extends JavaPlugin {
     }
 
     /**
-     * Loads optional plugin integrations.
+     * Loads optional plugin integrations (PlaceholderAPI, Discord webhook).
      */
     private void loadIntegrations() {
         // PlaceholderAPI
         if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new xAuctionsExpansion(this).register();
-            getLogger().info("PlaceholderAPI expansion registered.");
+            consoleSend("  §8[opt] §a✔ §fPlaceholderAPI expansion registered");
+        } else {
+            consoleSend("  §8[opt] §e→ §fPlaceholderAPI not found (expansion skipped)");
         }
 
         // Discord Webhook
         String webhookUrl = pluginConfig.getDiscordWebhookUrl();
-
         if (webhookUrl != null && !webhookUrl.isEmpty()) {
             discordWebhook = new DiscordWebhook(webhookUrl);
-            getLogger().info("Discord webhook integration enabled.");
+            consoleSend("  §8[opt] §a✔ §fDiscord webhook integration enabled");
+        } else {
+            consoleSend("  §8[opt] §e→ §fDiscord webhook not configured (skipped)");
         }
     }
 
@@ -489,6 +519,10 @@ public class XAuctionsPlugin extends JavaPlugin {
 
     public io.nightbeam.studio.xauctions.core.managers.PlayerBlacklistManager getPlayerBlacklistManager() {
         return playerBlacklistManager;
+    }
+
+    public io.nightbeam.studio.xauctions.core.managers.PlayerPreferencesManager getPlayerPreferencesManager() {
+        return playerPreferencesManager;
     }
 
     public PlatformAdapter getPlatformAdapter() {
