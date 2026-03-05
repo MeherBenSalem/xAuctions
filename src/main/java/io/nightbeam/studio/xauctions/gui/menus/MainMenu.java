@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 public class MainMenu extends BaseMenu {
 
     public MainMenu(XAuctionsPlugin plugin) {
-        super(plugin, "Auction House", 54);
+        super(plugin, "ᴀᴜᴄᴛɪᴏɴ ʜᴏᴜꜱᴇ", 54);
     }
 
     @Override
@@ -45,20 +45,20 @@ public class MainMenu extends BaseMenu {
 
         // My Auctions (24)
         setItem(24, new MenuItem(ItemBuilder.from(Material.ENDER_CHEST)
-                .name("§bMy Auctions")
+                .name("§bᴍʏ ᴀᴜᴄᴛɪᴏɴꜱ")
                 .lore("§7Manage your listings", "§7Collect earnings/items")
                 .build(), event -> {
-                    Player p = (Player) event.getWhoClicked();
-                    plugin.getGuiManager().openMenu(p, new PlayerSellingMenu(plugin, p, p));
-                }));
+            Player p = (Player) event.getWhoClicked();
+            plugin.getGuiManager().openMenu(p, new PlayerSellingMenu(plugin, p, p));
+        }));
 
         // Categories (31)
         setItem(31, new MenuItem(ItemBuilder.from(Material.CHEST)
-                .name("§6Categories")
+                .name("§6ᴄᴀᴛᴇɢᴏʀɪᴇꜱ")
                 .lore("§7Browse by category")
                 .build(), event -> {
-                    plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new CategoryMenu(plugin));
-                }));
+            plugin.getGuiManager().openMenu((Player) event.getWhoClicked(), new CategoryMenu(plugin));
+        }));
     }
 
     @Override

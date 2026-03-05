@@ -2,19 +2,21 @@ package io.nightbeam.studio.xauctions.core.listeners;
 
 import io.nightbeam.studio.xauctions.XAuctionsPlugin;
 import io.nightbeam.studio.xauctions.gui.menus.AuctionsMenu;
+import io.nightbeam.studio.xauctions.utils.SchedulerUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.Set;
 import java.util.UUID;
 
 public class InputListener implements Listener {
 
     private final XAuctionsPlugin plugin;
-    private final Set<UUID> awaitingSearch = new HashSet<>();
+    // HashSet is not thread-safe; chat events come from async threads so use a concurrent set
+    private final Set<UUID> awaitingSearch = Collections.newSetFromMap(new java.util.concurrent.ConcurrentHashMap<>());
 
     public InputListener(XAuctionsPlugin plugin) {
         this.plugin = plugin;
@@ -39,8 +41,8 @@ public class InputListener implements Listener {
                 return; // Optionally open main menu
             }
 
-            // Sync to main thread to open GUI
-            plugin.getServer().getScheduler().runTask(plugin, () -> {
+            // Sync to main thread to open GUI (use scheduler util to be Folia-safe)
+            SchedulerUtils.run(plugin, player, () -> {
                 plugin.getGuiManager().openMenu(player, new AuctionsMenu(plugin, query));
             });
         }

@@ -12,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 public class CategoryMenu extends BaseMenu {
 
     public CategoryMenu(XAuctionsPlugin plugin) {
-        super(plugin, "Categories", 27);
+        super(plugin, "ᴄᴀᴛᴇɢᴏʀɪᴇꜱ", 27);
     }
 
     @Override

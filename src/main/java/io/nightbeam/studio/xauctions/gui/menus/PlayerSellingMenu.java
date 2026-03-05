@@ -23,7 +23,7 @@ public class PlayerSellingMenu extends AbstractMenu {
     private final Player viewer;
 
     public PlayerSellingMenu(XAuctionsPlugin plugin, Player targetPlayer, @Nullable Player viewer) {
-        super(plugin, "My Auctions", 54);
+        super(plugin, "ᴍʏ ᴀᴜᴄᴛɪᴏɴꜱ", 54);
         this.targetPlayer = targetPlayer;
         this.viewer = viewer != null ? viewer : targetPlayer;
     }

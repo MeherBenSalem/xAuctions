@@ -42,7 +42,7 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
     }
 
     public AuctionsMenu(XAuctionsPlugin plugin, String searchQuery, AuctionFilter filter, AuctionSortOrder sort) {
-        super(plugin, "AUCTION SITE", 54);
+        super(plugin, "ᴀᴜᴄᴛɪᴏɴ ʜᴏᴜꜱᴇ", 54);
         this.searchQuery = searchQuery;
         this.currentFilter = filter;
         this.currentSort = sort;
@@ -52,10 +52,28 @@ public class AuctionsMenu extends PaginatedMenu<Auction> {
     @Override
     public void onOpen(Player player) {
         this.viewerUuid = player.getUniqueId();
-        // Load persisted filter + sort from the player's preferences
+        // Load persisted filter + sort from the player's preferences but only if
+        // we were constructed with the default settings. When a specific
+        // filter/query/sort is supplied (e.g. from category click or search)
+        // we keep that value and also update the preferences so the choice
+        // is remembered.
         PlayerPreferences prefs = plugin.getPlayerPreferencesManager().getOrCreate(viewerUuid);
-        this.currentFilter = prefs.getFilter();
-        this.currentSort = prefs.getSortOrder();
+
+        boolean usingDefaultFilter = this.searchQuery == null && this.currentFilter == AuctionFilter.ALL && this.currentSort == AuctionSortOrder.NEWEST;
+        if (usingDefaultFilter) {
+            // no explicit filter specified - read previous preference
+            this.currentFilter = prefs.getFilter();
+            this.currentSort = prefs.getSortOrder();
+        }
+
+        // if this was a normal GUI open (not a search), remember the
+        // selected filter/sort so it persists; searches should not alter
+        // the saved preference.
+        if (this.searchQuery == null) {
+            prefs.setFilter(this.currentFilter);
+            prefs.setSortOrder(this.currentSort);
+        }
+
         update();
     }
 

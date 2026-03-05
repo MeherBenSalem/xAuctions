@@ -91,6 +91,18 @@ public class XAuctionsPlugin extends JavaPlugin {
 
             // Step 2 — Economy provider
             setupEconomy();
+            // listen for other plugins enabling so we can pick up late-registered
+            // Vault economy providers (e.g. DonutCore) and retry hooking.
+            Bukkit.getPluginManager().registerEvents(new org.bukkit.event.Listener() {
+                @org.bukkit.event.EventHandler
+                public void onPluginEnable(org.bukkit.event.server.PluginEnableEvent e) {
+                    // small optimization: only retry if Vault isn't hooked yet
+                    if (!vaultEnabled) {
+                        setupEconomy();
+                    }
+                }
+            }, this);
+
             economyManager = new EconomyManager(this);
             economyManager.init();
             String econDesc = vaultEnabled ? "Vault (" + vaultEconomy.getName() + ")" : "no economy provider hooked";
@@ -256,9 +268,21 @@ public class XAuctionsPlugin extends JavaPlugin {
         }
 
         try {
-            vaultEconomy = rsp.getProvider();
+            // avoid re-initializing if we already have the same provider
+            Economy provider = rsp.getProvider();
+            if (vaultEnabled && vaultEconomy != null && vaultEconomy.getName().equals(provider.getName())) {
+                // already hooked to this economy
+                return;
+            }
+            vaultEconomy = provider;
             vaultEnabled = true;
             getLogger().info("Hooked into economy: " + vaultEconomy.getName());
+            // if the economy manager has been created already, register a fresh Vault
+            // provider instance so it picks up the newly-available service.
+            if (economyManager != null) {
+                economyManager.registerProvider(new io.nightbeam.studio.xauctions.economy.impl.VaultProvider());
+                getLogger().info("EconomyManager updated with Vault provider.");
+            }
         } catch (Throwable t) {
             vaultEnabled = false;
             getLogger().warning("Failed to initialize Vault economy provider — disabling Vault economy support.");

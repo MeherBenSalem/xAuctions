@@ -1,4 +1,4 @@
-title: "&8Auction House"
+title: "&8ᴀᴜᴄᴛɪᴏɴ ʜᴏᴜꜱᴇ"
 size: 54
 type: "MAIN"
 
@@ -11,7 +11,7 @@ items:
   
   categories:
     material: CHEST
-    name: "&eCategories"
+    name: "&eᴄᴀᴛᴇɢᴏʀɪᴇꜱ"
     lore:
       - "&7Click to browse categories"
     slot: 22
@@ -20,7 +20,7 @@ items:
 
   my_auctions:
     material: GOLD_INGOT
-    name: "&6My Auctions"
+    name: "&6ᴍʏ ᴀᴜᴄᴛɪᴏɴꜱ"
     lore:
       - "&7View your active auctions"
     slot: 20

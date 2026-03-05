@@ -10,6 +10,7 @@ website: https://www.nightbeam.cloud
 # Soft dependencies (optional integrations)
 softdepend:
   - Vault
+  - DonutCore
   - PlaceholderAPI
   - PlayerPoints
   - TokenManager

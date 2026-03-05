@@ -105,7 +105,7 @@ public class AuctionHistoryMenu extends PaginatedMenu<Auction> {
     @Override
     protected void addNavigationButtons(int totalPages) {
         super.addNavigationButtons(totalPages);
-        setItem(49, new MenuItem(ItemBuilder.from(Material.OAK_DOOR).name("§cBack to Auction House").build(), e -> {
+        setItem(49, new MenuItem(ItemBuilder.from(Material.OAK_DOOR).name("§cBack to ᴀᴜᴄᴛɪᴏɴ ʜᴏᴜꜱᴇ").build(), e -> {
             plugin.getGuiManager().openMenu((Player) e.getWhoClicked(), new AuctionsMenu(plugin));
         }));
     }

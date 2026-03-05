@@ -16,6 +16,7 @@ io\nightbeam\studio\xauctions\gui\GuiManager.class
 io\nightbeam\studio\xauctions\economy\impl\ItemEconomyProvider.class
 io\nightbeam\studio\xauctions\economy\impl\VaultProvider.class
 io\nightbeam\studio\xauctions\api\event\AuctionEvent.class
+io\nightbeam\studio\xauctions\XAuctionsPlugin$1.class
 io\nightbeam\studio\xauctions\gui\menus\AuctionsMenu$1.class
 io\nightbeam\studio\xauctions\utils\SchedulerUtils.class
 io\nightbeam\studio\xauctions\api\model\Auction$AuctionBuilder.class
