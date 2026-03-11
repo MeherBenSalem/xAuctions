@@ -3,7 +3,7 @@
 <!--
   yGuard Bytecode Obfuscator, v4.1.1, a Product of yWorks GmbH - http://www.yworks.com
 
-  Logfile created on Thu Mar 05 13:48:35 CET 2026
+  Logfile created on Thu Mar 05 14:17:28 CET 2026
 
   Jar file to be obfuscated:           xAuctions-1.3.0.jar
   Target Jar file for obfuscated code: xAuctions-1.3.0-obf.jar
@@ -13,6 +13,9 @@
 Methods are called which may break in obfuscated version at runtime.
 Please review your source code to ensure that the dangerous methods are not intended
 to act on classes which have been obfuscated.
+-->
+<!--
+     Your class io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider calls the java.lang.Class method java.lang.reflect.Method getMethod(java.lang.String, java.lang.Class[])
 -->
 <!--
      Your class org.slf4j.LoggerFactory calls the java.lang.ClassLoader method java.lang.Class loadClass(java.lang.String)
@@ -65,8 +68,8 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.java.JavaPlugin not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.java.JavaPlugin not found! -->
 <!--
-  Memory in use after class data structure built: 33089464 bytes
-  Total memory available                        : 125829120 bytes
+  Memory in use after class data structure built: 27472208 bytes
+  Total memory available                        : 98566144 bytes
 -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
 <!-- WARNING: Unresolved external dependency: org.jetbrains.annotations.NotNull not found! -->
@@ -282,20 +285,13 @@ to act on classes which have been obfuscated.
 <!-- WARNING: No mapping found: org.bukkit.inventory.ItemStack -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: No mapping found: org.bukkit.entity.Player -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
-<!-- WARNING: No mapping found: org.bukkit.Server -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitScheduler not found! -->
-<!-- WARNING: No mapping found: org.bukkit.scheduler.BukkitScheduler -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitTask not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.entity.Entity not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.player.PlayerJoinEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.player.PlayerQuitEvent not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
-<!-- WARNING: Unresolved external dependency: org.bukkit.scheduler.BukkitScheduler not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.event.Listener not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.entity.Player not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
@@ -339,6 +335,11 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginManager not found! -->
 <!-- WARNING: No mapping found: org.bukkit.plugin.PluginManager -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.Plugin not found! -->
+<!-- WARNING: No mapping found: org.bukkit.Bukkit -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.ServicesManager not found! -->
+<!-- WARNING: No mapping found: org.bukkit.plugin.ServicesManager -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.RegisteredServiceProvider not found! -->
+<!-- WARNING: No mapping found: org.bukkit.plugin.RegisteredServiceProvider -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
@@ -346,6 +347,9 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Server not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.plugin.PluginManager not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.Bukkit not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.ServicesManager not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.plugin.RegisteredServiceProvider not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
@@ -411,6 +415,16 @@ to act on classes which have been obfuscated.
 <!-- WARNING: Unresolved external dependency: org.bukkit.configuration.ConfigurationSection not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.inventory.ItemStack not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: No mapping found: org.bukkit.OfflinePlayer -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: No mapping found: net.milkbowl.vault.economy.EconomyResponse -->
+<!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
+<!-- WARNING: Unresolved external dependency: net.milkbowl.vault.economy.EconomyResponse not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.Material not found! -->
 <!-- WARNING: Unresolved external dependency: org.bukkit.OfflinePlayer not found! -->
@@ -14464,9 +14478,26 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider" name="java.lang.String getId()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider" name="boolean withdraw(org.bukkit.OfflinePlayer, double)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider" name="boolean has(org.bukkit.OfflinePlayer, double)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
-  <class name="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" map="e"/>
-  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="name" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
-  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="currencyMaterial" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
+  <class name="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" map="e"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="service" map="&#x00d4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000String"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="getBalanceMethod" map="&#x00d5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000class"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="withdrawMethod" map="&#x00d6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000return"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="hasMethod" map="&#x00d8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000void"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="currencySingularMethod" map="&#x00f4;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000null"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="currencyPluralMethod" map="&#x00f5;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000int"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="formatMethod" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="depositMethod" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="double getBalance(org.bukkit.OfflinePlayer)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="java.util.UUID uuidOf(org.bukkit.OfflinePlayer)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="java.lang.String format(double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="java.lang.String getCurrencyName()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="boolean deposit(org.bukkit.OfflinePlayer, double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="java.lang.String getId()" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="boolean withdraw(org.bukkit.OfflinePlayer, double)" map="&#x00d2;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000new"/>
+  <method class="io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider" name="boolean has(org.bukkit.OfflinePlayer, double)" map="&#x00d3;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000Object"/>
+  <class name="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" map="f"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="name" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
+  <field class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="currencyMaterial" map="oO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000do"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="double getBalance(org.bukkit.OfflinePlayer)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="java.lang.String format(double)" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider" name="java.lang.String getCurrencyName()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
@@ -14514,6 +14545,7 @@ to act on classes which have been obfuscated.
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="discordWebhook" map="&#x00d5;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000interface"/>
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="itemBlacklistManager" map="&#x00d6;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000thissuper"/>
   <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="auctionService" map="&#x00d8;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000supersuper"/>
+  <field class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="vaultCheckWarned" map="&#x00f4;O00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000newsuper"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.XAuctionsPlugin getInstance()" map="getInstance"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void registerListeners()" map="o000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000super"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void onEnable()" map="onEnable"/>
@@ -14550,5 +14582,6 @@ to act on classes which have been obfuscated.
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="java.lang.String fetchRemoteVersion()" map="&#x00f6;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000if"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void setupEconomy()" map="&#x00f8;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000float"/>
   <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="io.nightbeam.studio.xauctions.security.AntiDupeManager getAntiDupeManager()" map="getAntiDupeManager"/>
+  <method class="io.nightbeam.studio.xauctions.XAuctionsPlugin" name="void hookDonutCoreIfAvailable()" map="OO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000for"/>
 </map>
 </yguard>

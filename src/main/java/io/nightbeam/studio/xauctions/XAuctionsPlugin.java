@@ -70,6 +70,8 @@ public class XAuctionsPlugin extends JavaPlugin {
     // Vault economy flag and reference (optional)
     private boolean vaultEnabled = false;
     private Economy vaultEconomy = null;
+    // track whether we've already warned about missing economy so we don't spam the console
+    private boolean vaultCheckWarned = false;
 
     // ... [skipping to getters]
 
@@ -100,12 +102,35 @@ public class XAuctionsPlugin extends JavaPlugin {
                     if (!vaultEnabled) {
                         setupEconomy();
                     }
+                    // also attempt to hook any DonutCore economy service when plugins come online
+                    hookDonutCoreIfAvailable();
                 }
             }, this);
 
+            // schedule a fallback check in case the economy service registers asynchronously (license validation, etc.)
+            platformAdapter.runGlobalTaskLater(this::hookDonutCoreIfAvailable, 40L);
+
             economyManager = new EconomyManager(this);
             economyManager.init();
-            String econDesc = vaultEnabled ? "Vault (" + vaultEconomy.getName() + ")" : "no economy provider hooked";
+            // after initializing the manager re-run our Vault check; the manager may have
+            // re-registered a provider or DonutCore could have added its service already.
+            hookDonutCoreIfAvailable();
+            setupEconomy();
+            // also schedule a second attempt a few ticks later in case provider registration
+            // happens very late (e.g. DonutCore enabling after our listener registration).
+            platformAdapter.runGlobalTaskLater(this::setupEconomy, 20L);
+
+            String econDesc;
+            var defaultProv = economyManager.getDefaultProvider();
+            if (defaultProv != null) {
+                econDesc = defaultProv.getId();
+                // if we're using Vault we can include the hooked economy name too
+                if ("vault".equalsIgnoreCase(econDesc) && vaultEconomy != null) {
+                    econDesc = "Vault (" + vaultEconomy.getName() + ")";
+                }
+            } else {
+                econDesc = "no economy provider hooked";
+            }
             consoleStep(step++, totalSteps, "Economy provider resolved (" + econDesc + ")");
 
             // Environment info (server version, Java, integrations)
@@ -261,8 +286,11 @@ public class XAuctionsPlugin extends JavaPlugin {
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
 
         if (rsp == null || rsp.getProvider() == null) {
-            getLogger().warning(
-                    "No economy provider found — install EssentialsX, CMI, or another Vault-compatible economy.");
+            if (!vaultCheckWarned) {
+                getLogger().warning(
+                        "No economy provider found — install EssentialsX, CMI, or another Vault-compatible economy.");
+                vaultCheckWarned = true;
+            }
             vaultEnabled = false;
             return;
         }
@@ -276,6 +304,7 @@ public class XAuctionsPlugin extends JavaPlugin {
             }
             vaultEconomy = provider;
             vaultEnabled = true;
+            vaultCheckWarned = false;
             getLogger().info("Hooked into economy: " + vaultEconomy.getName());
             // if the economy manager has been created already, register a fresh Vault
             // provider instance so it picks up the newly-available service.
@@ -286,6 +315,29 @@ public class XAuctionsPlugin extends JavaPlugin {
         } catch (Throwable t) {
             vaultEnabled = false;
             getLogger().warning("Failed to initialize Vault economy provider — disabling Vault economy support.");
+        }
+    }
+
+    /**
+     * Try to look up a DonutCore economy service and register an adapter provider.
+     * This is done via reflection so that xAuctions does not hard-depend on DonutCore.
+     */
+    private void hookDonutCoreIfAvailable() {
+        try {
+            Class<?> donutClass = Class.forName("io.nightbeam.donutcore.modules.economy.EconomyService");
+            RegisteredServiceProvider<?> reg = getServer().getServicesManager().getRegistration(donutClass);
+            if (reg != null && reg.getProvider() != null && economyManager != null) {
+                Object donutSvc = reg.getProvider();
+                try {
+                    economyManager.registerProvider(
+                            new io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider(donutSvc));
+                    getLogger().info("EconomyManager updated with DonutCore provider.");
+                } catch (ReflectiveOperationException ex) {
+                    getLogger().warning("Failed to register DonutCore economy provider: " + ex.getMessage());
+                }
+            }
+        } catch (ClassNotFoundException ignored) {
+            // DonutCore not installed, ignore
         }
     }
 

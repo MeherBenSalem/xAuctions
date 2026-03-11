@@ -289,6 +289,12 @@ Replace immediate `saveToFile()` on every mutation with a dirty flag. Flush to d
 
 ### Event Handling Improvements
 
+### Economy Integration
+
+- Automatically detect and hook DonutCore's economy service (via Vault or direct ServicesManager lookup) and offer a "donutcore" provider configuration option. Added delayed re-checks and plugin-enable listener to handle late registrations. Avoid spamming missing-economy warnings.
+
+### Event Handling Improvements
+
 1. Add `@EventHandler(ignoreCancelled = true)` to `GuiManager.onClick`.
 2. Add early return in `GuiManager.onClick` if the top inventory is a `PlayerInventory` (the most common non-AH case).
 3. Replace `AsyncPlayerChatEvent` in `InputListener` with Paper's `AsyncChatEvent`.

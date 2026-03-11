@@ -21,6 +21,7 @@ D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\api\XAuctionsA
 D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\gui\AbstractMenu.java
 D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\api\service\AuctionService.java
 D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\api\service\EconomyService.java
+D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\economy\impl\DonutCoreProvider.java
 D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\economy\impl\VaultProvider.java
 D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\storage\json\JsonStorageProvider.java
 D:\Projects\xAuctions\src\main\java\io\nightbeam\studio\xauctions\gui\menus\MainMenu.java

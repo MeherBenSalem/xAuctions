@@ -56,6 +56,7 @@ io\nightbeam\studio\xauctions\utils\ItemSerializer.class
 io\nightbeam\studio\xauctions\core\listeners\InputListener.class
 io\nightbeam\studio\xauctions\core\managers\PlayerBlacklistManager.class
 io\nightbeam\studio\xauctions\storage\json\JsonStorageProvider$1.class
+io\nightbeam\studio\xauctions\economy\impl\DonutCoreProvider.class
 io\nightbeam\studio\xauctions\utils\ItemBuilder.class
 io\nightbeam\studio\xauctions\internal\service\impl\AuctionServiceImpl.class
 io\nightbeam\studio\xauctions\storage\sql\SqlStorageProvider.class

@@ -8,6 +8,9 @@ import io.nightbeam.studio.xauctions.economy.impl.PlayerPointsProvider;
 import io.nightbeam.studio.xauctions.economy.impl.LevelEconomyProvider;
 import io.nightbeam.studio.xauctions.economy.impl.ItemEconomyProvider;
 
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.RegisteredServiceProvider;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -43,6 +46,23 @@ public class EconomyManager implements EconomyService {
             } catch (Exception e) {
                 plugin.getLogger().log(Level.WARNING, "Failed to hook PlayerPoints", e);
             }
+        }
+
+        // Try to hook DonutCore's native economy service (optionally registered via ServicesManager). This
+        // uses reflection so we don't hard-depend on DonutCore at compile time.
+        try {
+            Class<?> donutClass = Class.forName("io.nightbeam.donutcore.modules.economy.EconomyService");
+            RegisteredServiceProvider<?> donutReg = Bukkit.getServicesManager().getRegistration(donutClass);
+            if (donutReg != null && donutReg.getProvider() != null) {
+                try {
+                    registerProvider(new io.nightbeam.studio.xauctions.economy.impl.DonutCoreProvider(donutReg.getProvider()));
+                    plugin.getLogger().info("Woohoo! DonutCore economy found and hooked.");
+                } catch (ReflectiveOperationException ex) {
+                    plugin.getLogger().warning("Unable to hook DonutCore economy: " + ex.getMessage());
+                }
+            }
+        } catch (ClassNotFoundException ignored) {
+            // no donutcore present
         }
 
         // Register Internal Providers

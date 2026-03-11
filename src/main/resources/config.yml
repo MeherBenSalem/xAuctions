@@ -15,7 +15,11 @@ general:
 # ---------------------------------------------------------------
 economy:
   # The economy provider to use.
-  # Available options: vault, playerpoints
+  # Available options: vault, playerpoints, donutcore
+  # Selecting "donutcore" will use the native DonutCore economy service when
+  # available, falling back to Vault otherwise. If using Vault you can also
+  # leave this set to "vault" and the plugin will detect DonutCore via Vault
+  # automatically.
   provider: vault
 
 # ---------------------------------------------------------------
@@ -26,33 +30,20 @@ storage:
   # Available options: json, mysql, mariadb, postgresql, sqlite
   type: json
 
-  # Database connection settings (only used if type is not json)
   connection:
     host: localhost
     port: 3306
     database: xauctions
     username: root
     password: password
-    
-    # Prefix for database tables
     table-prefix: xa_
-    
-    # Maximum pool size for connection pooling
     max-pool-size: 10
 
-# ---------------------------------------------------------------
-# Auction Settings
-# ---------------------------------------------------------------
 auction-settings:
-  # Default duration for an auction in seconds.
-  # 86400 seconds = 24 hours
+
   default-duration: 86400
 
-  # Fee charged to list an item (currency based on economy provider).
-  # Set to 0 to disable listing fees.
   listing-fee: 10.0
-
-  # Maximum number of concurrent auctions a player can have listed.
   # Bypass permission: xauctions.limit.bypass
   max-auctions: 15
 
@@ -62,8 +53,6 @@ auction-settings:
   # Maximum allowable price for an auction.
   max-price: 1000000000.0
 
-  # Allow players in Creative mode to list items?
-  # Recommended: false (to prevent economy exploits)
   allow-creative: false
 
   # Allow damaged items to be listed?
@@ -73,12 +62,8 @@ auction-settings:
   broadcast-creation: true
   broadcast-sale: true
 
-# ---------------------------------------------------------------
-# Integrations
-# ---------------------------------------------------------------
 integrations:
   discord:
-    # Webhook URL for sending auction alerts to a Discord channel.
     # Leave empty to disable Discord integration.
     webhook-url: ""
 
