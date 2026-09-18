@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -9,51 +10,71 @@
     <packaging>jar</packaging>
 
     <name>xAuctions</name>
-    <description>Premium, scalable, modular Auction House plugin</description>
+    <description>Scalable, modular auction house plugin for Paper, Folia, and related servers.</description>
+    <url>https://github.com/MeherBenSalem/xAuctions</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>NightBeam Studio</name>
+            <url>https://www.nightbeam.cloud</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/MeherBenSalem/xAuctions</url>
+        <connection>scm:git:https://github.com/MeherBenSalem/xAuctions.git</connection>
+        <developerConnection>scm:git:https://github.com/MeherBenSalem/xAuctions.git</developerConnection>
+    </scm>
 
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <bstats.version>3.1.0</bstats.version>
     </properties>
 
     <repositories>
-        <!-- PaperMC Repo -->
         <repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-        <!-- Spigot Repo -->
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-        <!-- Rosewood Repo for PlayerPoints -->
         <repository>
             <id>rosewood-repo</id>
             <url>https://repo.rosewooddev.io/repository/public/</url>
         </repository>
-        <!-- JitPack for various libs -->
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-        <!-- PlaceholderAPI -->
         <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
-        <!-- Paper API -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.20.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-        
-        <!-- Lombok -->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -61,7 +82,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- PlaceholderAPI -->
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
@@ -69,7 +89,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -77,21 +96,25 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Database / Pooling -->
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
             <version>5.1.0</version>
         </dependency>
-        
-        <!-- Redis Client -->
+
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>5.1.0</version>
         </dependency>
 
-        <!-- Vault API -->
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>${bstats.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>
@@ -99,7 +122,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- PlayerPoints API -->
         <dependency>
             <groupId>org.black_ixx</groupId>
             <artifactId>playerpoints</artifactId>
@@ -107,7 +129,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Annotations -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -122,6 +143,15 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>LICENSE</include>
+                    <include>NOTICE</include>
+                </includes>
+                <targetPath>META-INF</targetPath>
+                <filtering>false</filtering>
             </resource>
         </resources>
         <plugins>
@@ -145,8 +175,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <!-- Reduce unused classes and shrink jar size -->
-                            <minimizeJar>true</minimizeJar>
+                            <minimizeJar>false</minimizeJar>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
@@ -155,8 +184,10 @@
                                         <exclude>META-INF/*.DSA</exclude>
                                         <exclude>META-INF/*.RSA</exclude>
                                         <exclude>META-INF/MANIFEST.MF</exclude>
-                                        <exclude>META-INF/LICENSE*</exclude>
-                                        <exclude>META-INF/NOTICE*</exclude>
+                                        <exclude>META-INF/LICENSE</exclude>
+                                        <exclude>META-INF/LICENSE.txt</exclude>
+                                        <exclude>META-INF/NOTICE</exclude>
+                                        <exclude>META-INF/NOTICE.txt</exclude>
                                         <exclude>META-INF/DEPENDENCIES</exclude>
                                         <exclude>META-INF/maven/**</exclude>
                                         <exclude>META-INF/versions/**</exclude>
@@ -167,14 +198,23 @@
                                         <exclude>**/package-info.class</exclude>
                                     </excludes>
                                 </filter>
-                                <!-- Keep shaded libraries that use reflection -->
                                 <filter>
-                                    <artifact>io.nightbeam.studio.xauctions.libs:*</artifact>
+                                    <artifact>org.bstats:*</artifact>
                                     <includes>
                                         <include>**</include>
                                     </includes>
                                 </filter>
                             </filters>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                                    <resource>META-INF/LICENSE</resource>
+                                    <file>${project.basedir}/LICENSE</file>
+                                </transformer>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
+                                    <resource>META-INF/NOTICE</resource>
+                                    <file>${project.basedir}/NOTICE</file>
+                                </transformer>
+                            </transformers>
                             <relocations>
                                 <relocation>
                                     <pattern>com.zaxxer.hikari</pattern>
@@ -184,78 +224,98 @@
                                     <pattern>redis.clients.jedis</pattern>
                                     <shadedPattern>io.nightbeam.studio.xauctions.libs.jedis</shadedPattern>
                                 </relocation>
+                                <relocation>
+                                    <pattern>org.apache.commons.pool2</pattern>
+                                    <shadedPattern>io.nightbeam.studio.xauctions.libs.pool2</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.json</pattern>
+                                    <shadedPattern>io.nightbeam.studio.xauctions.libs.json</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.bstats</pattern>
+                                    <shadedPattern>io.nightbeam.studio.xauctions.libs.bstats</shadedPattern>
+                                </relocation>
                             </relocations>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.yworks</groupId>
-                        <artifactId>yguard</artifactId>
-                        <version>4.1.1</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>obfuscate-with-yguard</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" classpathref="maven.plugin.classpath"/>
-                                <echo>=== Running yGuard Obfuscation ===</echo>
-                                <yguard>
-                                    <inoutpair in="target/${project.artifactId}-${project.version}.jar" out="target/${project.artifactId}-${project.version}-obf.jar"/>
-                                    <rename logfile="target/yguard-rename.log" replaceClassNameStrings="true">
-                                        <property name="naming-scheme" value="best"/>
-                                        <property name="language-conformity" value="compatible"/>
-                                        <keep>
-                                            <class name="io.nightbeam.studio.xauctions.XAuctionsPlugin"/>
-                                            <class classes="private" methods="public" fields="none">
-                                                <patternset>
-                                                    <include name="io.nightbeam.studio.xauctions.listeners.**"/>
-                                                </patternset>
-                                            </class>
-                                            <class classes="private" methods="public" fields="none">
-                                                <patternset>
-                                                    <include name="io.nightbeam.studio.xauctions.commands.**"/>
-                                                </patternset>
-                                            </class>
-                                            <class classes="private" methods="public" fields="none">
-                                                <patternset>
-                                                    <include name="io.nightbeam.studio.xauctions.integrations.**"/>
-                                                </patternset>
-                                            </class>
-                                            <!-- Exclude shaded libraries (use reflection) -->
-                                            <class classes="private" methods="private" fields="private">
-                                                <patternset>
-                                                    <include name="io.nightbeam.studio.xauctions.libs.**"/>
-                                                </patternset>
-                                            </class>
-                                            <!-- Exclude config/model/storage because field names map to YAML keys -->
-                                            <class classes="private" methods="private" fields="private">
-                                                <patternset>
-                                                    <include name="io.nightbeam.studio.xauctions.config.**"/>
-                                                    <include name="io.nightbeam.studio.xauctions.model.**"/>
-                                                    <include name="io.nightbeam.studio.xauctions.storage.**"/>
-                                                </patternset>
-                                            </class>
-                                        </keep>
-                                    </rename>
-                                </yguard>
-                                <echo>=== Obfuscation Complete: target/${project.artifactId}-${project.version}-obf.jar ===</echo>
-                            </target>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>obfuscate</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.yworks</groupId>
+                                <artifactId>yguard</artifactId>
+                                <version>4.1.1</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <id>obfuscate-with-yguard</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" classpathref="maven.plugin.classpath"/>
+                                        <echo>=== Running yGuard Obfuscation ===</echo>
+                                        <yguard>
+                                            <inoutpair in="target/${project.artifactId}-${project.version}.jar" out="target/${project.artifactId}-${project.version}-obf.jar"/>
+                                            <rename logfile="target/yguard-rename.log" replaceClassNameStrings="true">
+                                                <property name="naming-scheme" value="best"/>
+                                                <property name="language-conformity" value="compatible"/>
+                                                <keep>
+                                                    <class name="io.nightbeam.studio.xauctions.XAuctionsPlugin"/>
+                                                    <class classes="private" methods="public" fields="none">
+                                                        <patternset>
+                                                            <include name="io.nightbeam.studio.xauctions.listeners.**"/>
+                                                        </patternset>
+                                                    </class>
+                                                    <class classes="private" methods="public" fields="none">
+                                                        <patternset>
+                                                            <include name="io.nightbeam.studio.xauctions.commands.**"/>
+                                                        </patternset>
+                                                    </class>
+                                                    <class classes="private" methods="public" fields="none">
+                                                        <patternset>
+                                                            <include name="io.nightbeam.studio.xauctions.integrations.**"/>
+                                                        </patternset>
+                                                    </class>
+                                                    <class classes="private" methods="private" fields="private">
+                                                        <patternset>
+                                                            <include name="io.nightbeam.studio.xauctions.libs.**"/>
+                                                        </patternset>
+                                                    </class>
+                                                    <class classes="private" methods="private" fields="private">
+                                                        <patternset>
+                                                            <include name="io.nightbeam.studio.xauctions.config.**"/>
+                                                            <include name="io.nightbeam.studio.xauctions.model.**"/>
+                                                            <include name="io.nightbeam.studio.xauctions.storage.**"/>
+                                                        </patternset>
+                                                    </class>
+                                                </keep>
+                                            </rename>
+                                        </yguard>
+                                        <echo>=== Obfuscation Complete: target/${project.artifactId}-${project.version}-obf.jar ===</echo>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

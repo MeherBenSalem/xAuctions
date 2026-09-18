@@ -1,0 +1,28 @@
+# Maven
+target/
+*.jar
+!**/src/**/*.jar
+*.class
+*.log
+hs_err_pid*
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.*
+*.local.env
+
+# Build / agent clutter
+build.log
+yguard-rename.log
+graphify-out/

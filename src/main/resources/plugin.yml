@@ -3,8 +3,8 @@ version: '${project.version}'
 main: io.nightbeam.studio.xauctions.XAuctionsPlugin
 api-version: '1.20'
 folia-supported: true
-authors: [NAIZO]
-description: Premium Auction House Plugin
+authors: [NightBeam Studio]
+description: Scalable auction house plugin for Paper, Folia, and related servers
 website: https://www.nightbeam.cloud
 
 # Soft dependencies (optional integrations)

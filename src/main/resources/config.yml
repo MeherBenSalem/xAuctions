@@ -72,3 +72,10 @@ commands:
   # If true, the top-level `/sell` command will be enabled.
   # Default: false — prefer `/ah sell <price>` as the canonical usage.
   enable-top-level-sell: false
+
+# ---------------------------------------------------------------
+# Update checker (Modrinth)
+# ---------------------------------------------------------------
+update-checker:
+  enabled: true
+  notify-console: true

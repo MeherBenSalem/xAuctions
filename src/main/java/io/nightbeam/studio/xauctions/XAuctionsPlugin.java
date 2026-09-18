@@ -20,16 +20,13 @@ import io.nightbeam.studio.xauctions.internal.service.impl.AuctionServiceImpl;
 import io.nightbeam.studio.xauctions.core.managers.TaxManager;
 import io.nightbeam.studio.xauctions.core.managers.ListingLimitManager;
 import io.nightbeam.studio.xauctions.utils.PlatformAdapter;
+import io.nightbeam.studio.xauctions.util.ModrinthUpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
+import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 
 import java.util.logging.Level;
 
@@ -195,8 +192,10 @@ public class XAuctionsPlugin extends JavaPlugin {
             // Optional integrations (PlaceholderAPI, Discord)
             loadIntegrations();
 
+            startMetrics();
+
             // Async version check (non-blocking)
-            checkForUpdates();
+            new ModrinthUpdateChecker(this).checkAsync();
 
             long loadTime = System.currentTimeMillis() - startTime;
             consoleSend("§2§l╠═════════════════════════════════════════════════════════════╣");
@@ -214,26 +213,15 @@ public class XAuctionsPlugin extends JavaPlugin {
     }
 
     /**
-     * Asynchronously checks the remote version and logs if an update is available.
+     * Registers anonymous usage metrics with bStats (non-fatal).
      */
-    private void checkForUpdates() {
-        platformAdapter.runAsync(() -> {
-            try {
-                String remote = fetchRemoteVersion();
-                if (remote == null || remote.isBlank())
-                    return;
-                String remoteClean = remote.startsWith("v") ? remote.substring(1) : remote;
-                String local = getDescription().getVersion();
-                if (!remoteClean.equals(local)) {
-                    consoleSend("§e§l[xAuctions] §eUpdate available: §f" + remote + " §8(§cyou have v" + local + "§8)");
-                    consoleSend("§8  → §7https://builtbybit.com/resources/xauctions-advanced-auctions-house.91840/");
-                } else {
-                    consoleSend("§8[xAuctions] §aRunning latest version (v" + local + "). §7✔");
-                }
-            } catch (Throwable t) {
-                // ignore silently
-            }
-        });
+    private void startMetrics() {
+        try {
+            Metrics metrics = new Metrics(this, 34108);
+            metrics.addCustomChart(new SimplePie("server_software", () -> Bukkit.getServer().getName()));
+        } catch (Exception ex) {
+            getLogger().warning("Failed to start bStats metrics: " + ex.getMessage());
+        }
     }
 
     @Override
@@ -339,34 +327,6 @@ public class XAuctionsPlugin extends JavaPlugin {
         } catch (ClassNotFoundException ignored) {
             // DonutCore not installed, ignore
         }
-    }
-
-    /**
-     * Attempts to fetch the public version string from the remote text file.
-     * Falls back to the plugin's own version on any error or timeout.
-     */
-    private String fetchRemoteVersion() {
-        String remoteUrl = "https://raw.githubusercontent.com/MeherBenSalem/VersionChecker/main/versions_xAuctions.txt";
-        try {
-            URL url = new URL(remoteUrl);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setConnectTimeout(2000);
-            conn.setReadTimeout(2000);
-            conn.setRequestMethod("GET");
-            int code = conn.getResponseCode();
-            if (code != 200)
-                return getDescription().getVersion();
-            try (BufferedReader br = new BufferedReader(
-                    new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-                String line = br.readLine();
-                if (line != null && !line.isBlank()) {
-                    return line.trim();
-                }
-            }
-        } catch (Exception ignored) {
-            // ignore and fall back
-        }
-        return getDescription().getVersion();
     }
 
     /**
