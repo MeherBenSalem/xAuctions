@@ -1,0 +1,29 @@
+# Managed by the NightBeam maintainer agent. Builds the Maven project on
+# pushes and pull requests. Publishing stays in publish.yml.
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - id: java
+        shell: bash
+        run: |
+          java=$(grep -hoE '<(maven\.compiler\.release|java\.version|release)>[0-9]+' pom.xml | grep -oE '[0-9]+$' | sort -n | tail -1)
+          echo "version=${java:-21}" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: ${{ steps.java.outputs.version }}
+          cache: maven
+      - name: Build
+        run: mvn -B -ntp verify

@@ -26,3 +26,11 @@ Thumbs.db
 build.log
 yguard-rename.log
 graphify-out/
+
+build/
+.gradle/
+out/
+run/
+runs/
+*.ipr
+*.iws
